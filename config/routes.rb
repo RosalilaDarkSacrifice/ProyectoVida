@@ -1,4 +1,22 @@
 ProyectoVida::Application.routes.draw do
+
+  resources :permisos
+
+  resources :permisos_por_rols
+
+  resources :rols
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "usuarios#new", :as => "sign_up"
+  root :to => "usuarios#new"
+  resources :usuarios
+  resources :sessions
+
+  get "sessions/new"
+
+  get "usuarios/new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
