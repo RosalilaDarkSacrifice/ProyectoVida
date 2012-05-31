@@ -32,9 +32,11 @@ caption { border:1px solid #5C443A;
  text-align:center;
  text-transform:uppercase;
 }
-td, th { color:#363636;
+td, th { 
+ color:#363636;
  padding:.4em;
 }
+
 tr { border:1px dotted gray;
 }
 thead th, tfoot th { background:#5C443A;
@@ -96,7 +98,6 @@ h1, h2, h3 {
 	margin: 0;
 	font-weight: normal;
 	color: #1E3F7F;
-	text-transform: lowercase;
 }
 
 h1 { font-size: 44px; }

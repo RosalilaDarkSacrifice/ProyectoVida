@@ -1,5 +1,7 @@
 ProyectoVida::Application.routes.draw do
 
+  resources :pedidos
+
   resources :permisos
 
   resources :permisos_por_rols

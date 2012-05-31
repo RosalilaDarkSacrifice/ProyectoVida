@@ -1,0 +1,41 @@
+<h1>Listing pedidos</h1>
+
+<table>
+  <tr>
+    <th>Asesor</th>
+    <th>Evento</th>
+    <th>Ciudad</th>
+    <th>Fecha pedido</th>
+    <th>Nombre cliente</th>
+    <th>Valor credito</th>
+    <th>Abono inicial</th>
+    <th>Numero cuotas</th>
+    <th>Fecha inicio pago</th>
+    <th>Fecha fin pago</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pedidos.each do |pedido| %>
+  <tr>
+    <td><%= pedido.asesor_id %></td>
+    <td><%= pedido.evento %></td>
+    <td><%= pedido.ciudad %></td>
+    <td><%= pedido.fecha_pedido %></td>
+    <td><%= pedido.nombre_cliente %></td>
+    <td><%= pedido.valor_credito %></td>
+    <td><%= pedido.abono_inicial %></td>
+    <td><%= pedido.numero_cuotas %></td>
+    <td><%= pedido.fecha_inicio_pago %></td>
+    <td><%= pedido.fecha_fin_pago %></td>
+    <td><%= link_to 'Mostrar', pedido %></td>
+    <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
+    <td><%= link_to 'Eliminar', pedido, confirm: 'Esta seguro?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Pedido', new_pedido_path %>
