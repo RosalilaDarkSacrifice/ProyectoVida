@@ -1,4 +1,6 @@
-<h1>Listing asesors</h1>
+<h1>Asesores</h1>
+
+</br>
 
 <table>
   <tr>
@@ -15,13 +17,13 @@
     <td><%= asesor.nombre %></td>
     <td><%= asesor.telefono %></td>
     <td><%= asesor.identidad %></td>
-    <td><%= link_to 'Show', asesor %></td>
-    <td><%= link_to 'Edit', edit_asesor_path(asesor) %></td>
-    <td><%= link_to 'Destroy', asesor, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', asesor %></td>
+    <td><%= link_to 'Editar', edit_asesor_path(asesor) %></td>
+    <td><%= link_to 'Eliminar', asesor, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Asesor', new_asesor_path %>
+<%= link_to 'Agregar asesor', new_asesor_path %>

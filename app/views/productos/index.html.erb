@@ -1,4 +1,6 @@
-<h1>Listing productos</h1>
+<h1>Productos</h1>
+
+</br>
 
 <table>
   <tr>
@@ -11,13 +13,13 @@
 <% @productos.each do |producto| %>
   <tr>
     <td><%= producto.nombre %></td>
-    <td><%= link_to 'Show', producto %></td>
-    <td><%= link_to 'Edit', edit_producto_path(producto) %></td>
-    <td><%= link_to 'Destroy', producto, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', producto %></td>
+    <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
+    <td><%= link_to 'Eliminar', producto, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Producto', new_producto_path %>
+<%= link_to 'Nuevo producto', new_producto_path %>

@@ -1,4 +1,6 @@
-<h1>Listing inventarios</h1>
+<h1>Productos en inventario</h1>
+
+</br>
 
 <table>
   <tr>
@@ -13,13 +15,13 @@
   <tr>
     <td><%= inventario.producto.nombre %></td>
     <td><%= inventario.cantidad %></td>
-    <td><%= link_to 'Show', inventario %></td>
-    <td><%= link_to 'Edit', edit_inventario_path(inventario) %></td>
-    <td><%= link_to 'Destroy', inventario, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', inventario %></td>
+    <td><%= link_to 'Editar', edit_inventario_path(inventario) %></td>
+    <td><%= link_to 'Eliminar', inventario, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Inventario', new_inventario_path %>
+<%= link_to 'Agregar producto', new_inventario_path %>

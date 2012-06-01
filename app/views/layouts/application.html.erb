@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProyectoVida</title>
+  <title>Proyecto de Vida</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -38,7 +38,7 @@
 	</div>
 	<!-- end #menu -->
 	<div id="logo">
-		<h1><a href="/">Proyecto Vida </a></h1>
+		<h1><a href="/">Proyecto de Vida </a></h1>
 		<% if current_user %>
 			<h2>Bienvenido <%= current_user.nombre %>.</h2>
 		<% else %>
@@ -73,9 +73,8 @@
 						<h2>Menú</h2>
 						<ul>
 							<li><%= link_to "Pedidos", pedidos_path %></li>
-							<li><%= link_to "Inventario", inventarios_path %></li>
-							<li><%= link_to "Tránsito", transitos_path %></li>
-							<li><%= link_to "ProductosPedidos", producto_pedidos_path %></li>
+							<li><%= link_to "Productos en inventario", inventarios_path %></li>
+							<li><%= link_to "Productos en tránsito", transitos_path %></li>
 							<li><%= link_to "Asesores", asesors_path %></li>
 							<li><%= link_to "Productos", productos_path %></li>
 

@@ -1,5 +1,84 @@
 <p id="notice"><%= notice %></p>
 
+
+<!-- Mostrar productos de este cliente -->
+
+
+<table>
+  <tr>
+    <th>Producto</th>
+    <th>Pedido</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pedido.producto_pedidos.each do |producto_pedido| %>
+  <tr>
+    <td><%= producto_pedido.producto.nombre %></td>
+    <td><%= producto_pedido.pedido_id %></td>
+    <td><%= producto_pedido.cantidad %></td>
+    <td><%= producto_pedido.precio %></td>
+    <td><%= link_to 'Show', producto_pedido %></td>
+    <td><%= link_to 'Edit', edit_producto_pedido_path(producto_pedido) %></td>
+    <td><%= link_to 'Destroy', producto_pedido, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<!---->
+
+
+<!-- Form para agregar un nuevo producto -->
+
+
+<% producto_pedido=ProductoPedido.new %>
+
+<%= form_for(producto_pedido) do |f| %>
+  <% if producto_pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(producto_pedido.errors.count, "error") %> prohibited this producto_pedido from being saved:</h2>
+
+      <ul>
+      <% producto_pedido.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :producto_id %><br />
+    <%= f.collection_select :producto_id, Producto.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :pedido_id %><br />
+    <%= f.number_field :pedido_id, :value => @pedido.id %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br />
+    <%= f.text_field :precio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+<!---->
+
 <p>
   <b>Asesor:</b>
   <%= @pedido.asesor_id %>
