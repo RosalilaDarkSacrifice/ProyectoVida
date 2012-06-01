@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Producto:</b>
+  <%= @transito.producto_id %>
+</p>
+
+<p>
+  <b>Asesor:</b>
+  <%= @transito.asesor_id %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @transito.cantidad %>
+</p>
+
+
+<%= link_to 'Edit', edit_transito_path(@transito) %> |
+<%= link_to 'Back', transitos_path %>

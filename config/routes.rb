@@ -1,5 +1,15 @@
 ProyectoVida::Application.routes.draw do
 
+  resources :producto_pedidos
+
+  resources :transitos
+
+  resources :inventarios
+
+  resources :productos
+
+  resources :asesors
+
   resources :pedidos
 
   resources :permisos

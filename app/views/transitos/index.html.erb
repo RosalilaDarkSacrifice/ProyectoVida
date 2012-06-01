@@ -1,0 +1,27 @@
+<h1>Listing transitos</h1>
+
+<table>
+  <tr>
+    <th>Producto</th>
+    <th>Asesor</th>
+    <th>Cantidad</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transitos.each do |transito| %>
+  <tr>
+    <td><%= transito.producto.nombre %></td>
+    <td><%= transito.asesor.nombre %></td>
+    <td><%= transito.cantidad %></td>
+    <td><%= link_to 'Show', transito %></td>
+    <td><%= link_to 'Edit', edit_transito_path(transito) %></td>
+    <td><%= link_to 'Destroy', transito, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transito', new_transito_path %>
