@@ -41,6 +41,7 @@ class ProductoPedidosController < ApplicationController
   # POST /producto_pedidos.json
   def create
     @producto_pedido = ProductoPedido.new(params[:producto_pedido])
+    @producto_pedido.pedido_id = params[:pedido_id]
 
     respond_to do |format|
       if @producto_pedido.save
@@ -73,10 +74,11 @@ class ProductoPedidosController < ApplicationController
   # DELETE /producto_pedidos/1.json
   def destroy
     @producto_pedido = ProductoPedido.find(params[:id])
+    @pedido=@producto_pedido.pedido;
     @producto_pedido.destroy
 
     respond_to do |format|
-      format.html { redirect_to producto_pedidos_url }
+      format.html { redirect_to @pedido}#producto_pedidos_url }
       format.json { head :no_content }
     end
   end

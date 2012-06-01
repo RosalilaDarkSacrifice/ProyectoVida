@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :numero_pedido %><br />
+    <%= f.text_field :numero_pedido %>
+  </div>
+  <div class="field">
     <%= f.label :asesor_id %><br />
     <%= f.collection_select :asesor_id, Asesor.all, :id, :nombre %>
   </div>
