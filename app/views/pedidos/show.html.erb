@@ -89,7 +89,7 @@
 
 <p>
   <b>Asesor:</b>
-  <%= @pedido.asesor_id %>
+  <%= link_to @pedido.asesor.nombre,@pedido.asesor %>
 </p>
 
 <p>
@@ -239,4 +239,4 @@
 
 
 <%= link_to 'Editar', edit_pedido_path(@pedido) %> |
-<%= link_to 'Atrás', pedidos_path %>
+<%= link_to_function "Atrás", "history.back()" %>

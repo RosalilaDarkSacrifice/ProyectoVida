@@ -21,7 +21,7 @@
 
 <% @pedidos.each do |pedido| %>
   <tr>
-    <td><%= pedido.asesor.nombre %></td>
+    <td><%= link_to pedido.asesor.nombre,pedido.asesor %></td>
     <td><%= pedido.evento %></td>
     <td><%= pedido.ciudad %></td>
     <td><%= pedido.fecha_pedido %></td>

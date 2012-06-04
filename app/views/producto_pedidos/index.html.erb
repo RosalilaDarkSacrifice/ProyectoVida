@@ -15,7 +15,7 @@
 
 <% @producto_pedidos.each do |producto_pedido| %>
   <tr>
-    <td><%= producto_pedido.producto.nombre %></td>
+    <td><%= link_to producto_pedido.producto.nombre, producto_pedido.producto %></td>
     <td><%= producto_pedido.pedido_id %></td>
     <td><%= producto_pedido.cantidad %></td>
     <td><%= producto_pedido.precio %></td>

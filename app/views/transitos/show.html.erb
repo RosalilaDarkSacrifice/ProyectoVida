@@ -2,12 +2,12 @@
 
 <p>
   <b>Producto:</b>
-  <%= @transito.producto_id %>
+  <%= @transito.producto.nombre %>
 </p>
 
 <p>
   <b>Asesor:</b>
-  <%= @transito.asesor_id %>
+  <%= link_to @transito.asesor.nombre, @transito.asesor %>
 </p>
 
 <p>
@@ -17,4 +17,4 @@
 
 
 <%= link_to 'Editar', edit_transito_path(@transito) %> |
-<%= link_to 'Atrás', transitos_path %>
+<%= link_to_function "Atrás", "history.back()" %>

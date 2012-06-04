@@ -15,7 +15,7 @@
 <% @transitos.each do |transito| %>
   <tr>
     <td><%= transito.producto.nombre %></td>
-    <td><%= transito.asesor.nombre %></td>
+    <td><%= link_to transito.asesor.nombre, transito.asesor %></td>
     <td><%= transito.cantidad %></td>
     <td><%= link_to 'Mostrar', transito %></td>
     <td><%= link_to 'Editar', edit_transito_path(transito) %></td>
