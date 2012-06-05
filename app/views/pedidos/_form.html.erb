@@ -20,10 +20,6 @@
     <%= f.collection_select :asesor_id, Asesor.all, :id, :nombre %>
   </div>
   <div class="field">
-    <%= f.label :codificador %><br />
-    <%= f.text_field :codificador %>
-  </div>
-  <div class="field">
     <%= f.label :evento %><br />
     <%= f.text_field :evento %>
   </div>
@@ -92,12 +88,24 @@
     <%= f.text_field :conyugue %>
   </div>
   <div class="field">
+    <%= f.label :telefono_conyugue %><br />
+    <%= f.text_field :telefono_conyugue %>
+  </div>
+  <div class="field">
     <%= f.label :referencia %><br />
     <%= f.text_field :referencia %>
   </div>
   <div class="field">
     <%= f.label :telefono_referencia %><br />
     <%= f.text_field :telefono_referencia %>
+  </div>
+  <div class="field">
+    <%= f.label :referencia2 %><br />
+    <%= f.text_field :referencia2 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono_referencia2 %><br />
+    <%= f.text_field :telefono_referencia2 %>
   </div>
   <div class="field">
     <%= f.label :alumno %><br />
@@ -126,6 +134,18 @@
   <div class="field">
     <%= f.label :valor_cuota %><br />
     <%= f.text_field :valor_cuota %>
+  </div>
+  <div class="field">
+    <%= f.label :decuento %><br />
+    <%= f.text_field :descuento %>
+  </div>
+  <div class="field">
+    <%= f.label :mora %><br />
+    <%= f.text_field :mora %>
+  </div>
+  <div class="field">
+    <%= f.label :pago_contado %><br />
+    <%= f.check_box :pago_contado %>
   </div>
   <div class="field">
     <%= f.label :fecha_inicio_pago %><br />

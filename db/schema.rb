@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601134520) do
+ActiveRecord::Schema.define(:version => 20120605160010) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20120601134520) do
 
   create_table "pedidos", :force => true do |t|
     t.integer  "asesor_id"
-    t.string   "codificador"
     t.string   "evento"
     t.string   "ciudad"
     t.date     "fecha_pedido"
@@ -62,6 +61,12 @@ ActiveRecord::Schema.define(:version => 20120601134520) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "numero_pedido"
+    t.string   "telefono_conyugue"
+    t.string   "referencia2"
+    t.string   "telefono_referencia2"
+    t.float    "descuento"
+    t.float    "mora"
+    t.boolean  "pago_contado"
   end
 
   create_table "permisos", :force => true do |t|
@@ -76,6 +81,16 @@ ActiveRecord::Schema.define(:version => 20120601134520) do
     t.integer  "permiso_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "producto_ingresos", :force => true do |t|
+    t.integer  "producto_id"
+    t.date     "fecha_ingreso"
+    t.string   "documento_ingreso"
+    t.integer  "cantidad_ingreso"
+    t.float    "valor_producto"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "producto_pedidos", :force => true do |t|

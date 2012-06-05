@@ -1,5 +1,7 @@
 ProyectoVida::Application.routes.draw do
 
+  resources :producto_ingresos
+
   resources :producto_pedidos
 
   resources :transitos

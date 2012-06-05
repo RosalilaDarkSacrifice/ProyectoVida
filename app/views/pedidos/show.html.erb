@@ -93,11 +93,6 @@
 </p>
 
 <p>
-  <b>Codificador:</b>
-  <%= @pedido.codificador %>
-</p>
-
-<p>
   <b>Evento:</b>
   <%= @pedido.evento %>
 </p>
@@ -181,7 +176,10 @@
   <b>Conyugue:</b>
   <%= @pedido.conyugue %>
 </p>
-
+<p>
+  <b>Telefono Conyugue:</b>
+  <%= @pedido.telefono_conyugue %>
+</p>
 <p>
   <b>Referencia:</b>
   <%= @pedido.referencia %>
@@ -191,7 +189,15 @@
   <b>Telefono referencia:</b>
   <%= @pedido.telefono_referencia %>
 </p>
+<p>
+  <b>Referencia 2:</b>
+  <%= @pedido.referencia2 %>
+</p>
 
+<p>
+  <b>Telefono referencia 2:</b>
+  <%= @pedido.telefono_referencia2 %>
+</p>
 <p>
   <b>Alumno:</b>
   <%= @pedido.alumno %>
@@ -210,6 +216,15 @@
 <p>
   <b>Valor credito:</b>
   <%= @pedido.valor_credito %>
+</p>
+<p>
+  <b>Descuento:</b>
+  <%= L. @pedido.descuento %>
+</p>
+
+<p>
+  <b>Mora:</b>
+  <%= L. @pedido.mora %>
 </p>
 
 <p>
