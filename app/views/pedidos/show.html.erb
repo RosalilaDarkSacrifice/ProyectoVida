@@ -1,6 +1,275 @@
 <p id="notice"><%= notice %></p>
 
 
+<table>
+
+  <tr>
+    <td>
+      <p>
+        <b>Número de pedido:</b><br/>
+        <%= @pedido.numero_pedido %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Asesor:</b><br/>
+        <%= link_to @pedido.asesor.nombre,@pedido.asesor %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Evento:</b><br/>
+        <%= @pedido.evento %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Ciudad:</b><br/>
+        <%= @pedido.ciudad %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Fecha pedido:</b><br/>
+        <%= @pedido.fecha_pedido %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Nombre cliente:</b><br/>
+        <%= @pedido.nombre_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Identidad cliente:</b><br/>
+        <%= @pedido.identidad_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono cliente:</b><br/>
+        <%= @pedido.telefono_cliente %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Celular cliente:</b><br/>
+        <%= @pedido.celular_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Correo electronico:</b><br/>
+        <%= @pedido.correo_electronico %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Direccion cliente:</b><br/>
+        <%= @pedido.direccion_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Ciudad cliente:</b><br/>
+        <%= @pedido.ciudad_cliente %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Departamento cliente:</b><br/>
+        <%= @pedido.departamento_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Trabajo cliente:</b><br/>
+        <%= @pedido.trabajo_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Cargo cliente:</b><br/>
+        <%= @pedido.cargo_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono trabajo:</b><br/>
+        <%= @pedido.telefono_trabajo %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Inicio hora contacto:</b><br/>
+        <%= @pedido.inicio_hora_contacto %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Fin hora contacto:</b><br/>
+        <%= @pedido.fin_hora_contacto %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Conyugue:</b><br/>
+        <%= @pedido.conyugue %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono Conyugue:</b><br/>
+        <%= @pedido.telefono_conyugue %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Referencia:</b><br/>
+        <%= @pedido.referencia %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono referencia:</b><br/>
+        <%= @pedido.telefono_referencia %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Referencia 2:</b><br/>
+        <%= @pedido.referencia2 %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono referencia 2:</b><br/>
+        <%= @pedido.telefono_referencia2 %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Alumno:</b><br/>
+        <%= @pedido.alumno %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Grado:</b><br/>
+        <%= @pedido.grado %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Jornada:</b><br/>
+        <%= @pedido.jornada %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Valor credito:</b><br/>
+        <%= @pedido.valor_credito %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Descuento:</b><br/>
+        <%= @pedido.descuento %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Mora:</b><br/>
+        <%= @pedido.mora %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Abono inicial:</b><br/>
+        <%= @pedido.abono_inicial %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Numero cuotas:</b><br/>
+        <%= @pedido.numero_cuotas %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Valor cuota:</b><br/>
+        <%= @pedido.valor_cuota %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Fecha inicio pago:</b><br/>
+        <%= @pedido.fecha_inicio_pago %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Fecha fin pago:</b><br/>
+        <%= @pedido.fecha_fin_pago %>
+      </p>
+    </td>
+  </tr>
+
+</table>
+
+<br/>
+
 <!-- Mostrar productos de este cliente -->
 
 <h1>Productos</h1>
@@ -80,177 +349,6 @@
 
 
 <!---->
-
-
-<p>
-  <b>Número de pedido:</b>
-  <%= @pedido.numero_pedido %>
-</p>
-
-<p>
-  <b>Asesor:</b>
-  <%= link_to @pedido.asesor.nombre,@pedido.asesor %>
-</p>
-
-<p>
-  <b>Evento:</b>
-  <%= @pedido.evento %>
-</p>
-
-<p>
-  <b>Ciudad:</b>
-  <%= @pedido.ciudad %>
-</p>
-
-<p>
-  <b>Fecha pedido:</b>
-  <%= @pedido.fecha_pedido %>
-</p>
-
-<p>
-  <b>Nombre cliente:</b>
-  <%= @pedido.nombre_cliente %>
-</p>
-
-<p>
-  <b>Identidad cliente:</b>
-  <%= @pedido.identidad_cliente %>
-</p>
-
-<p>
-  <b>Telefono cliente:</b>
-  <%= @pedido.telefono_cliente %>
-</p>
-
-<p>
-  <b>Celular cliente:</b>
-  <%= @pedido.celular_cliente %>
-</p>
-
-<p>
-  <b>Correo electronico:</b>
-  <%= @pedido.correo_electronico %>
-</p>
-
-<p>
-  <b>Direccion cliente:</b>
-  <%= @pedido.direccion_cliente %>
-</p>
-
-<p>
-  <b>Ciudad cliente:</b>
-  <%= @pedido.ciudad_cliente %>
-</p>
-
-<p>
-  <b>Departamento cliente:</b>
-  <%= @pedido.departamento_cliente %>
-</p>
-
-<p>
-  <b>Trabajo cliente:</b>
-  <%= @pedido.trabajo_cliente %>
-</p>
-
-<p>
-  <b>Cargo cliente:</b>
-  <%= @pedido.cargo_cliente %>
-</p>
-
-<p>
-  <b>Telefono trabajo:</b>
-  <%= @pedido.telefono_trabajo %>
-</p>
-
-<p>
-  <b>Inicio hora contacto:</b>
-  <%= @pedido.inicio_hora_contacto %>
-</p>
-
-<p>
-  <b>Fin hora contacto:</b>
-  <%= @pedido.fin_hora_contacto %>
-</p>
-
-<p>
-  <b>Conyugue:</b>
-  <%= @pedido.conyugue %>
-</p>
-<p>
-  <b>Telefono Conyugue:</b>
-  <%= @pedido.telefono_conyugue %>
-</p>
-<p>
-  <b>Referencia:</b>
-  <%= @pedido.referencia %>
-</p>
-
-<p>
-  <b>Telefono referencia:</b>
-  <%= @pedido.telefono_referencia %>
-</p>
-<p>
-  <b>Referencia 2:</b>
-  <%= @pedido.referencia2 %>
-</p>
-
-<p>
-  <b>Telefono referencia 2:</b>
-  <%= @pedido.telefono_referencia2 %>
-</p>
-<p>
-  <b>Alumno:</b>
-  <%= @pedido.alumno %>
-</p>
-
-<p>
-  <b>Grado:</b>
-  <%= @pedido.grado %>
-</p>
-
-<p>
-  <b>Jornada:</b>
-  <%= @pedido.jornada %>
-</p>
-
-<p>
-  <b>Valor credito:</b>
-  <%= @pedido.valor_credito %>
-</p>
-<p>
-  <b>Descuento:</b>
-  <%= @pedido.descuento %>
-</p>
-
-<p>
-  <b>Mora:</b>
-  <%= @pedido.mora %>
-</p>
-
-<p>
-  <b>Abono inicial:</b>
-  <%= @pedido.abono_inicial %>
-</p>
-
-<p>
-  <b>Numero cuotas:</b>
-  <%= @pedido.numero_cuotas %>
-</p>
-
-<p>
-  <b>Valor cuota:</b>
-  <%= @pedido.valor_cuota %>
-</p>
-
-<p>
-  <b>Fecha inicio pago:</b>
-  <%= @pedido.fecha_inicio_pago %>
-</p>
-
-<p>
-  <b>Fecha fin pago:</b>
-  <%= @pedido.fecha_fin_pago %>
-</p>
 
 
 <%= link_to 'Editar', edit_pedido_path(@pedido) %> |
