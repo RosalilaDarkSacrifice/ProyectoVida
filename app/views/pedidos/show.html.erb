@@ -7,7 +7,7 @@
 
 </br>
 
-<table>
+<table id="producto_pedido_tabla">
   <tr>
     <th>Producto</th>
     <th>Pedido</th>
@@ -42,7 +42,7 @@
 </br>
 <% producto_pedido=ProductoPedido.new %>
 
-<%= form_for(producto_pedido) do |f| %>
+<%= form_for(producto_pedido,remote: true) do |f| %>
   <% if producto_pedido.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(producto_pedido.errors.count, "error") %> prohibited this producto_pedido from being saved:</h2>
@@ -219,12 +219,12 @@
 </p>
 <p>
   <b>Descuento:</b>
-  <%= L. @pedido.descuento %>
+  <%= @pedido.descuento %>
 </p>
 
 <p>
   <b>Mora:</b>
-  <%= L. @pedido.mora %>
+  <%= @pedido.mora %>
 </p>
 
 <p>

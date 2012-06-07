@@ -41,12 +41,14 @@ class ProductoPedidosController < ApplicationController
   # POST /producto_pedidos.json
   def create
     @producto_pedido = ProductoPedido.new(params[:producto_pedido])
-    @producto_pedido.pedido_id = params[:pedido_id]
 
     respond_to do |format|
       if @producto_pedido.save
-        format.html { redirect_to @producto_pedido, notice: 'Producto pedido was successfully created.' }
-        format.json { render json: @producto_pedido, status: :created, location: @producto_pedido }
+        format.js
+        unless request.xhr?
+          format.html { redirect_to @producto_pedido.pedido, notice: 'Producto pedido was successfully created.' }
+          format.json { render json: @producto_pedido, status: :created, location: @producto_pedido }
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @producto_pedido.errors, status: :unprocessable_entity }
