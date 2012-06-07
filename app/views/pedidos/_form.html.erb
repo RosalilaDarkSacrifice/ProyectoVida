@@ -11,151 +11,292 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :numero_pedido %><br />
+<table border="1">
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :numero_pedido %><br/>
     <%= f.text_field :numero_pedido %>
   </div>
-  <div class="field">
-    <%= f.label :asesor_id %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :asesor_id %><br/>
     <%= f.collection_select :asesor_id, Asesor.all, :id, :nombre %>
   </div>
-  <div class="field">
-    <%= f.label :evento %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :evento %><br/>
     <%= f.text_field :evento %>
   </div>
-  <div class="field">
-    <%= f.label :ciudad %><br />
+  </td>
+</tr> 
+
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :ciudad %><br/>
     <%= f.text_field :ciudad %>
   </div>
-  <div class="field">
-    <%= f.label :fecha_pedido %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :fecha_pedido %><br/>
     <%= f.date_select :fecha_pedido %>
   </div>
-  <div class="field">
-    <%= f.label :nombre_cliente %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :nombre_cliente %><br/>
     <%= f.text_field :nombre_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :identidad_cliente %><br />
+  </td>
+
+</tr>
+
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :identidad_cliente %><br/>
     <%= f.text_field :identidad_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :telefono_cliente %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :telefono_cliente %><br/>
     <%= f.text_field :telefono_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :celular_cliente %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :celular_cliente %><br/>
     <%= f.text_field :celular_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :correo_electronico %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :correo_electronico %><br/>
     <%= f.text_field :correo_electronico %>
   </div>
-  <div class="field">
-    <%= f.label :direccion_cliente %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :direccion_cliente %><br/>
     <%= f.text_field :direccion_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :ciudad_cliente %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :ciudad_cliente %><br/>
     <%= f.text_field :ciudad_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :departamento_cliente %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :departamento_cliente %><br/>
     <%= f.text_field :departamento_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :trabajo_cliente %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :trabajo_cliente %><br/>
     <%= f.text_field :trabajo_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :cargo_cliente %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :cargo_cliente %><br/>
     <%= f.text_field :cargo_cliente %>
   </div>
-  <div class="field">
-    <%= f.label :telefono_trabajo %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :telefono_trabajo %><br/>
     <%= f.text_field :telefono_trabajo %>
   </div>
-  <div class="field">
-    <%= f.label :inicio_hora_contacto %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :inicio_hora_contacto %><br/>
     <%= f.time_select :inicio_hora_contacto %>
   </div>
-  <div class="field">
-    <%= f.label :fin_hora_contacto %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :fin_hora_contacto %><br/>
     <%= f.time_select :fin_hora_contacto %>
   </div>
-  <div class="field">
-    <%= f.label :conyugue %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :conyugue %><br/>
     <%= f.text_field :conyugue %>
   </div>
-  <div class="field">
-    <%= f.label :telefono_conyugue %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :telefono_conyugue %><br/>
     <%= f.text_field :telefono_conyugue %>
   </div>
-  <div class="field">
-    <%= f.label :referencia %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :referencia %><br/>
     <%= f.text_field :referencia %>
   </div>
-  <div class="field">
-    <%= f.label :telefono_referencia %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :telefono_referencia %><br/>
     <%= f.text_field :telefono_referencia %>
   </div>
-  <div class="field">
-    <%= f.label :referencia2 %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :referencia2 %><br/>
     <%= f.text_field :referencia2 %>
   </div>
-  <div class="field">
-    <%= f.label :telefono_referencia2 %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :telefono_referencia2 %><br/>
     <%= f.text_field :telefono_referencia2 %>
   </div>
-  <div class="field">
-    <%= f.label :alumno %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :alumno %><br/>
     <%= f.text_field :alumno %>
   </div>
-  <div class="field">
-    <%= f.label :grado %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :grado %><br/>
     <%= f.text_field :grado %>
   </div>
-  <div class="field">
-    <%= f.label :jornada %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :jornada %><br/>
     <%= f.text_field :jornada %>
   </div>
-  <div class="field">
-    <%= f.label :valor_credito %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :valor_credito %><br/>
     <%= f.text_field :valor_credito %>
   </div>
-  <div class="field">
-    <%= f.label :abono_inicial %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :abono_inicial %><br/>
     <%= f.text_field :abono_inicial %>
   </div>
-  <div class="field">
-    <%= f.label :numero_cuotas %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :numero_cuotas %><br/>
     <%= f.number_field :numero_cuotas %>
   </div>
-  <div class="field">
-    <%= f.label :valor_cuota %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :valor_cuota %><br/>
     <%= f.text_field :valor_cuota %>
   </div>
-  <div class="field">
-    <%= f.label :decuento %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :decuento %><br/>
     <%= f.text_field :descuento %>
   </div>
-  <div class="field">
-    <%= f.label :mora %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :mora %><br/>
     <%= f.text_field :mora %>
   </div>
-  <div class="field">
-    <%= f.label :pago_contado %><br />
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :pago_contado %><br/>
     <%= f.check_box :pago_contado %>
   </div>
-  <div class="field">
-    <%= f.label :fecha_inicio_pago %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :fecha_inicio_pago %><br/>
     <%= f.date_select :fecha_inicio_pago %>
   </div>
-  <div class="field">
-    <%= f.label :fecha_fin_pago %><br />
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :fecha_fin_pago %><br/>
     <%= f.date_select :fecha_fin_pago %>
   </div>
-  <div class="actions">
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="actions">
     <%= f.submit %>
   </div>
+  </td>
+</tr>
+</table>
 <% end %>

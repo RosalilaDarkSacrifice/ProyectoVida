@@ -99,7 +99,6 @@ h1, h2, h3 {
 	margin: 0;
 	font-weight: normal;
 	color: #1E3F7F;
-	text-transform: lowercase;
 }
 
 h1 { font-size: 44px; }
@@ -195,7 +194,6 @@ hr { display: none; }
 	letter-spacing: -1px;
 	text-decoration: none;
 	text-align: center;
-	text-transform: lowercase;
 	font-family: 'Arvo', serif;
 	font-size: 14px;
 	font-weight: normal;
@@ -269,7 +267,6 @@ hr { display: none; }
 	width: 1000px;
 	margin: 0 auto;
 	padding: 0px 0px 20px 0px;
-	text-transform: lowercase;
 	text-align: center;
 }
 
@@ -310,7 +307,7 @@ hr { display: none; }
 
 #content {
 	float: right;
-	width: 560px;
+	width: 760px;
 	margin: 0px 0px 0px 0px;
 	padding: 40px 30px 0px 20px;
 }
@@ -329,7 +326,6 @@ hr { display: none; }
 
 .post .title a {
 	text-decoration: none;
-	text-transform: lowercase;
 	font-size: 30px;
 	color: #1E3F7F;
 	letter-spacing: -1px;
@@ -391,7 +387,7 @@ hr { display: none; }
 
 #sidebar {
 	float: left;
-	width: 320px;
+	width: 120px;
 	padding: 40px 0px 0px 30px;
 	font-family: 'Arvo', serif;
 }
