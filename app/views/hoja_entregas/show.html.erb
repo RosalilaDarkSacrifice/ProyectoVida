@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @hoja_entrega.fecha %>
+</p>
+
+<p>
+  <b>Documento:</b>
+  <%= @hoja_entrega.documento %>
+</p>
+
+<p>
+  <b>Producto:</b>
+  <%= @hoja_entrega.producto_id %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @hoja_entrega.cantidad %>
+</p>
+
+<p>
+  <b>Es devolucion:</b>
+  <%= @hoja_entrega.es_devolucion %>
+</p>
+
+
+<%= link_to 'Edit', edit_hoja_entrega_path(@hoja_entrega) %> |
+<%= link_to 'Back', hoja_entregas_path %>

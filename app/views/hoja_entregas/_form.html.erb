@@ -1,0 +1,37 @@
+<%= form_for(@hoja_entrega) do |f| %>
+  <% if @hoja_entrega.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hoja_entrega.errors.count, "error") %> prohibited this hoja_entrega from being saved:</h2>
+
+      <ul>
+      <% @hoja_entrega.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :documento %><br />
+    <%= f.text_field :documento %>
+  </div>
+  <div class="field">
+    <%= f.label :producto_id %><br />
+     <%= f.collection_select :producto_id, Producto.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="field">
+    <%= f.label :es_devolucion %><br />
+    <%= f.check_box :es_devolucion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

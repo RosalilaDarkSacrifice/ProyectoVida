@@ -1,0 +1,31 @@
+<h1>Listing hoja_entregas</h1>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Documento</th>
+    <th>Producto</th>
+    <th>Cantidad</th>
+    <th>Es devolucion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hoja_entregas.each do |hoja_entrega| %>
+  <tr>
+    <td><%= hoja_entrega.fecha %></td>
+    <td><%= hoja_entrega.documento %></td>
+    <td><%= hoja_entrega.producto_id %></td>
+    <td><%= hoja_entrega.cantidad %></td>
+    <td><%= hoja_entrega.es_devolucion %></td>
+    <td><%= link_to 'Show', hoja_entrega %></td>
+    <td><%= link_to 'Edit', edit_hoja_entrega_path(hoja_entrega) %></td>
+    <td><%= link_to 'Destroy', hoja_entrega, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hoja entrega', new_hoja_entrega_path %>

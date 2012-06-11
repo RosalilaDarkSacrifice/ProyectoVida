@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha: 2012-06-10
+  documento: MyString
+  producto_id: 1
+  cantidad: 1
+  es_devolucion: false
+
+two:
+  fecha: 2012-06-10
+  documento: MyString
+  producto_id: 1
+  cantidad: 1
+  es_devolucion: false

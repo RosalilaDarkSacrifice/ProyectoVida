@@ -1,0 +1,2 @@
+module HojaEntregasHelper
+end
