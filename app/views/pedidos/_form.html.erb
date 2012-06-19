@@ -46,8 +46,8 @@
 
   <td>
   <div id="campopedido" class="field">
-    <%= f.label :fecha_pedido %><br/>
-    <%= f.date_select :fecha_pedido %>
+    <%= f.label :fecha_evento %><br/>
+    <%= f.date_select :fecha_evento %>
   </div>
   </td>
 
@@ -255,7 +255,7 @@
 
   <td>
   <div id="campopedido" class="field">
-    <%= f.label :decuento %><br/>
+    <%= f.label :descuento %><br/>
     <%= f.text_field :descuento %>
   </div>
   </td>
@@ -271,8 +271,8 @@
 <tr>
   <td>
   <div id="campopedido" class="field">
-    <%= f.label :pago_contado %><br/>
-    <%= f.check_box :pago_contado %>
+    <%= f.label :tipo_pago %><br/>
+    <%= f.text_field :tipo_pago %>
   </div>
   </td>
 
@@ -285,8 +285,30 @@
 
   <td>
   <div id="campopedido" class="field">
-    <%= f.label :fecha_fin_pago %><br/>
-    <%= f.date_select :fecha_fin_pago %>
+    <%= f.label :fecha_ingreso %><br/>
+    <%= f.date_select :fecha_ingreso %>
+  </div>
+  </td>
+</tr>
+
+<tr>
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :rvi %><br/>
+    <%= f.text_field :rvi %>
+  </div>
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+    <%= f.label :num_dias_descuento %><br/>
+    <%= f.number_field :num_dias_descuento %>
+  </div>
+  </td>
+
+  <td>
+  <div id="campopedido" class="field">
+
   </div>
   </td>
 </tr>

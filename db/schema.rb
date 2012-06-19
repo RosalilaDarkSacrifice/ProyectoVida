@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605160010) do
+ActiveRecord::Schema.define(:version => 20120619183021) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20120605160010) do
     t.integer  "asesor_id"
     t.string   "evento"
     t.string   "ciudad"
-    t.date     "fecha_pedido"
+    t.date     "fecha_evento"
     t.string   "nombre_cliente"
     t.string   "identidad_cliente"
     t.string   "telefono_cliente"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20120605160010) do
     t.integer  "numero_cuotas"
     t.float    "valor_cuota"
     t.date     "fecha_inicio_pago"
-    t.date     "fecha_fin_pago"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "numero_pedido"
@@ -66,7 +65,10 @@ ActiveRecord::Schema.define(:version => 20120605160010) do
     t.string   "telefono_referencia2"
     t.float    "descuento"
     t.float    "mora"
-    t.boolean  "pago_contado"
+    t.string   "tipo_pago"
+    t.date     "fecha_ingreso"
+    t.integer  "num_dias_descuento"
+    t.string   "rvi"
   end
 
   create_table "permisos", :force => true do |t|
