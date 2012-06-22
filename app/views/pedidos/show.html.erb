@@ -36,8 +36,8 @@
   <tr>
     <td>
       <p>
-        <b>Fecha pedido:</b><br/>
-        <%= @pedido.fecha_pedido %>
+        <b>Fecha evento:</b><br/>
+        <%= @pedido.fecha_evento %>
       </p>
     </td>
 
@@ -246,8 +246,8 @@
   <tr>
     <td>
       <p>
-        <b>Valor cuota:</b><br/>
-        <%= @pedido.valor_cuota %>
+        <b>Tipo de pago:</b><br/>
+        <%= @pedido.tipo_pago %>
       </p>
     </td>
 
@@ -260,8 +260,30 @@
 
     <td>
       <p>
-        <b>Fecha fin pago:</b><br/>
-        <%= @pedido.fecha_fin_pago %>
+        <b>Fecha ingreso:</b><br/>
+        <%= @pedido.fecha_ingreso %>
+      </p>
+    </td>
+  </tr>
+
+<tr>
+    <td>
+      <p>
+        <b>RVI:</b><br/>
+        <%= @pedido.rvi %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Número días de descuento:</b><br/>
+        <%= @pedido.num_dias_descuento %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+
       </p>
     </td>
   </tr>
