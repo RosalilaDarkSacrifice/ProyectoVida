@@ -10,6 +10,8 @@ ProyectoVida::Application.routes.draw do
 
   resources :gerente_comercials
 
+  resources :cuota
+
   resources :producto_ingresos
 
   resources :producto_pedidos

@@ -290,9 +290,14 @@
 
 </table>
 
+<%= link_to 'Editar', edit_pedido_path(@pedido) %> 
+
+<br/>
 <br/>
 
 <!-- Mostrar productos de este cliente -->
+
+
 
 <h1>Productos</h1>
 
@@ -324,7 +329,12 @@
 <!---->
 
 
+
+
 <!-- Form para agregar un nuevo producto -->
+
+<!--
+
 </br>
 </br>
 <h1>Agregar nuevo producto</h1>
@@ -364,8 +374,33 @@
 
 
 
-<!---->
+-->
+
+<br/>
+
+<h1>Cuotas</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Estado</th>
+    <th>Liquidacion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Cuotum.all.each do |cuotum| %>
+  <tr>
+    <td><%= cuotum.estado %></td>
+    <td><%= cuotum.liquidacion %></td>
+    <td><%= link_to 'Mostrar', cuotum %></td>
+    <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
+    <td><%= link_to 'Eliminar', cuotum, confirm: 'Esta seguro?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
 
 
-<%= link_to 'Editar', edit_pedido_path(@pedido) %> |
 <%= link_to_function "Atrás", "history.back()" %>
