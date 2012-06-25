@@ -42,7 +42,7 @@
 <% DirectorComercial.all.each do |director_comercial| %>
   <tr>
     <td><%= director_comercial.nombre %></td>
-    <td><%= director_comercial.gerente_comercial_id %></td>
+    <td><%= director_comercial.gerente_comercial.nombre %></td>
     <td><%= director_comercial.comision_credito %></td>
     <td><%= link_to 'Mostrar', director_comercial %></td>
     <td><%= link_to 'Editar', edit_director_comercial_path(director_comercial) %></td>
@@ -74,7 +74,7 @@
 <% Coordinador.all.each do |coordinador| %>
   <tr>
     <td><%= coordinador.nombre %></td>
-    <td><%= coordinador.director_comercial_id %></td>
+    <td><%= coordinador.director_comercial.nombre %></td>
     <td><%= coordinador.comision_credito %></td>
     <td><%= link_to 'Mostrar', coordinador %></td>
     <td><%= link_to 'Editar', edit_coordinador_path(coordinador) %></td>
@@ -106,7 +106,7 @@
 <% Moderador.all.each do |moderador| %>
   <tr>
     <td><%= moderador.nombre %></td>
-    <td><%= moderador.coordinador_id %></td>
+    <td><%= moderador.coordinador.nombre %></td>
     <td><%= moderador.comision_credito %></td>
     <td><%= link_to 'Mostrar', moderador %></td>
     <td><%= link_to 'Editar', edit_moderador_path(moderador) %></td>
@@ -143,7 +143,7 @@
   <tr>
     <td><%= asesor.nombre %></td>
     <td><%= asesor.identidad %></td>
-    <td><%= asesor.moderador_id %></td>
+    <td><%= asesor.moderador.nombre %></td>
     <td><%= asesor.comision_credito %></td>
     <td><%= asesor.comision_contado_empresa %></td>
     <td><%= asesor.comision_contado_asesor %></td>
