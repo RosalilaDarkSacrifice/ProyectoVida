@@ -1,5 +1,15 @@
 ProyectoVida::Application.routes.draw do
 
+  resources :coordinadors
+
+  resources :asesors
+
+  resources :moderadors
+
+  resources :director_comercials
+
+  resources :gerente_comercials
+
   resources :producto_ingresos
 
   resources :producto_pedidos
@@ -9,8 +19,6 @@ ProyectoVida::Application.routes.draw do
   resources :inventarios
 
   resources :productos
-
-  resources :asesors
 
   resources :pedidos
 
@@ -30,6 +38,8 @@ ProyectoVida::Application.routes.draw do
   get "sessions/new"
 
   get "usuarios/new"
+
+  get "ventas" => "ventas#index", :as => "ventas"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -18,7 +18,7 @@ class AsesorsControllerTest < ActionController::TestCase
 
   test "should create asesor" do
     assert_difference('Asesor.count') do
-      post :create, asesor: { identidad: @asesor.identidad, nombre: @asesor.nombre, telefono: @asesor.telefono }
+      post :create, asesor: { comision_contado_asesor: @asesor.comision_contado_asesor, comision_contado_empresa: @asesor.comision_contado_empresa, comision_credito: @asesor.comision_credito, identidad: @asesor.identidad, moderador_id: @asesor.moderador_id, nombre: @asesor.nombre }
     end
 
     assert_redirected_to asesor_path(assigns(:asesor))
@@ -35,7 +35,7 @@ class AsesorsControllerTest < ActionController::TestCase
   end
 
   test "should update asesor" do
-    put :update, id: @asesor, asesor: { identidad: @asesor.identidad, nombre: @asesor.nombre, telefono: @asesor.telefono }
+    put :update, id: @asesor, asesor: { comision_contado_asesor: @asesor.comision_contado_asesor, comision_contado_empresa: @asesor.comision_contado_empresa, comision_credito: @asesor.comision_credito, identidad: @asesor.identidad, moderador_id: @asesor.moderador_id, nombre: @asesor.nombre }
     assert_redirected_to asesor_path(assigns(:asesor))
   end
 

@@ -6,15 +6,30 @@
 </p>
 
 <p>
-  <b>Telefono:</b>
-  <%= @asesor.telefono %>
-</p>
-
-<p>
   <b>Identidad:</b>
   <%= @asesor.identidad %>
 </p>
 
+<p>
+  <b>Moderador:</b>
+  <%= @asesor.moderador_id %>
+</p>
+
+<p>
+  <b>Comision credito(%):</b>
+  <%= @asesor.comision_credito %>
+</p>
+
+<p>
+  <b>Comision contado empresa(%):</b>
+  <%= @asesor.comision_contado_empresa %>
+</p>
+
+<p>
+  <b>Comision contado asesor(%):</b>
+  <%= @asesor.comision_contado_asesor %>
+</p>
+
 
 <%= link_to 'Editar', edit_asesor_path(@asesor) %> |
-<%= link_to_function "Atrás", "history.back()" %>
+<%= link_to 'Atrás', asesors_path %>

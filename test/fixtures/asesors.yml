@@ -2,10 +2,16 @@
 
 one:
   nombre: MyString
-  telefono: MyString
   identidad: MyString
+  moderador_id: 1
+  comision_credito: 1.5
+  comision_contado_empresa: 1.5
+  comision_contado_asesor: 1.5
 
 two:
   nombre: MyString
-  telefono: MyString
   identidad: MyString
+  moderador_id: 1
+  comision_credito: 1.5
+  comision_contado_empresa: 1.5
+  comision_contado_asesor: 1.5

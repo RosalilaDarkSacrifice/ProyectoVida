@@ -11,14 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622155624) do
+ActiveRecord::Schema.define(:version => 20120625015222) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
-    t.string   "telefono"
     t.string   "identidad"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "moderador_id"
+    t.float    "comision_credito"
+    t.float    "comision_contado_empresa"
+    t.float    "comision_contado_asesor"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "coordinadors", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "director_comercial_id"
+    t.float    "comision_credito"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  create_table "director_comercials", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "gerente_comercial_id"
+    t.float    "comision_credito"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "gerente_comercials", :force => true do |t|
+    t.string   "nombre"
+    t.float    "comision_credito"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "inventarios", :force => true do |t|
@@ -26,6 +52,14 @@ ActiveRecord::Schema.define(:version => 20120622155624) do
     t.integer  "cantidad"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "moderadors", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "coordinador_id"
+    t.float    "comision_credito"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "pedidos", :force => true do |t|
