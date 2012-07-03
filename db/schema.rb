@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625190158) do
+ActiveRecord::Schema.define(:version => 20120703165410) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
@@ -35,8 +35,22 @@ ActiveRecord::Schema.define(:version => 20120625190158) do
   create_table "cuota", :force => true do |t|
     t.string   "estado"
     t.string   "liquidacion"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.date     "fecha"
+    t.float    "valor"
+    t.float    "valor_credito"
+    t.float    "valor_deposito"
+    t.float    "mora"
+    t.float    "descuento"
+    t.float    "saldo"
+  end
+
+  create_table "depositos", :force => true do |t|
+    t.string   "numero"
+    t.date     "fecha"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "director_comercials", :force => true do |t|

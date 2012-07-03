@@ -11,15 +11,85 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+<table border="1">
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  </div>
+  </td>
+
+  <td>
+    <div class="field">
+    <%= f.label "Valor" %><br />
+    <%= f.number_field :valor , :value => 0 %>
+  </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Valor Crédito" %><br />
+    <%= f.number_field :valor_credito %>
+  </div>
+  </div>
+  </td>
+</tr> 
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label "Valor Depósito" %><br />
+    <%= f.number_field :valor_deposito , :value => 0 %>
+  </div>
+  </td>
+  <td>
+    <div class="field">
     <%= f.label :estado %><br />
     <%= f.text_field :estado %>
   </div>
-  <div class="field">
+  </div>
+  </td>
+
+  <td>
+    <div class="field">
     <%= f.label :liquidacion %><br />
     <%= f.text_field :liquidacion %>
   </div>
-  <div class="actions">
+  </td>	
+</tr> 
+
+<tr>
+<td>
+    <div class="field">
+    <%= f.label "Mora" %><br />
+    <%= f.number_field :mora , :value => 0 %>
+  </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Descuento" %><br />
+    <%= f.number_field :descuento %>
+  </div>
+  </div>
+  </td>
+
+  <td>
+    <div class="field">
+    <%= f.label "Saldo" %><br />
+    <%= f.number_field :saldo %>
+  </div>
+  </td>	
+
+</tr>
+<tr>
+  <td>
+   <div class="actions">
     <%= f.submit %>
   </div>
+  </td>
+</tr> 
+</table>
+
 <% end %>

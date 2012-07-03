@@ -11,6 +11,11 @@
 
 <% @cuota.each do |cuotum| %>
   <tr>
+    <td><%= cuotum.fecha %></td>
+    <td><%= cuotum.valor %></td>
+    <td><%= cuotum.valor_credito %></td>
+    <td><%= cuotum.mora %></td>
+    <td><%= cuotum.descuento %></td>
     <td><%= cuotum.estado %></td>
     <td><%= cuotum.liquidacion %></td>
     <td><%= link_to 'Mostrar', cuotum %></td>
