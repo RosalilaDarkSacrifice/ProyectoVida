@@ -33,7 +33,7 @@ ProyectoVida::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "usuarios#new", :as => "sign_up"
-  root :to => "usuarios#new"
+  root :to => "sessions#new"
   resources :usuarios
   resources :sessions
 

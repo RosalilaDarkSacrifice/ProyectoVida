@@ -1,4 +1,6 @@
-<h1>Log in</h1>
+<% if !current_user %>
+<h1>Iniciar sesión</h1>
+<br/>
 
 <%= form_tag sessions_path do %>
   <p>
@@ -10,4 +12,6 @@
     <%= password_field_tag :password %>
   </p>
   <p class="button"><%= submit_tag "Log in" %></p>
+<% end %>
+
 <% end %>

@@ -25,13 +25,15 @@
 		<ul>
 
 			<li class="current_page_item"><a href="/">Inicio</a></li>
+			<% if soyAdministrador %>
+			<li><%= link_to "Nuevo usuario", sign_up_path %></li>
+			<% end %>
 			<li><%= link_to "Cerrar sesión", log_out_path %></li>
 		</ul>
 		<% else %>
 		<ul>
 
 			<li class="current_page_item"><a href="/">Inicio</a></li>
-			<li><%= link_to "Registrarse", sign_up_path %></li>
 			<li><%= link_to "Iniciar sesión", log_in_path %></li>
 		</ul>
 		<% end %>
@@ -67,6 +69,8 @@
 				</div>
 			</div>
 			<!-- end #content -->
+			<% if current_user %>
+			<% if soyAdministrador %>
 			<div id="sidebar">
 				<ul>
 					<li>
@@ -83,6 +87,48 @@
 				</ul>
 			</div>
 			<!-- end #sidebar -->
+			<% end %>
+			<% if soyReferenciacion %>
+			<div id="sidebar">
+				<ul>
+					<li>
+						<h2>Menú</h2>
+						<ul>
+							<li><%= link_to "Ingresar pedido", new_pedido_path %></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+			<% end %>
+			<% if soyAsistente %>
+			<div id="sidebar">
+				<ul>
+					<li>
+						<h2>Menú</h2>
+						<ul>
+							<li><%= link_to "Pedidos", pedidos_path %></li>
+							<li><%= link_to "Validar cuotas", cuota_path %></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+			<% end %>
+			<% if soyCobranza %>
+			<div id="sidebar">
+				<ul>
+					<li>
+						<h2>Menú</h2>
+						<ul>
+							<li><%= link_to "Mis pedidos", pedidos_path %></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+			<% end %>
+			<% end %>
 			<div style="clear: both;">&nbsp;</div>
 		</div>
 		<!-- end #page -->
