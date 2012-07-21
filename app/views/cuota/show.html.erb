@@ -62,8 +62,8 @@
   <tr>
     <td>
       <p>
-	<b>Liquidación</b>
-	<%= @cuotum.liquidacion %>
+	<b>Liquidado</b>
+	<% @cuotum.liquidado  %>
       </p>
     </td>
     <td>
@@ -84,7 +84,8 @@
     <td>
       <p>
 	<b>Gestor de Cobro</b>
-	<%= @cuotum.usuario_id %>
+	<% user = Usuario.find(@cuotum.usuario_id) %>
+	<%= user.nombre %>
       </p>
     </td>
     <td>

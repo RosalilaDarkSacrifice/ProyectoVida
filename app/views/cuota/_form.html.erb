@@ -80,8 +80,8 @@
   
   <td>
     <div class="field">
-    <%= f.label :liquidacion %><br />
-    <%= f.text_field :liquidacion %>
+    <%= f.label "Número de Cuota" %><br />
+    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
   </div>
   </td>	
   
@@ -107,13 +107,17 @@
     <%= f.label "Gestor de Cobro" %><br />
     <%= f.collection_select :usuario_id, Usuario.all, :id, :nombre %>
   </div>
-  </div>
   </td>
   <td>
     <div class="field">
     <%= f.label "Información Revisada" %><br />
     <%= f.check_box :revisado %>
   </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Número de Pedido" %><br />
+    <%= f.collection_select :pedido_id,Pedido.all,:id,:id %>
   </div>
   </td>
 </tr>
