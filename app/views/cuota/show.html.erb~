@@ -5,7 +5,7 @@
     <td>
       <p>
         <b>Fecha Cuota:</b>
-	<%= @cuotum.fecha %>
+	<%= @cuotum.fecha_cuota %>
       </p>
     </td>
     

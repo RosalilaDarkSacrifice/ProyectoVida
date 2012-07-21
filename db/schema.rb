@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703165410) do
+ActiveRecord::Schema.define(:version => 20120720171032) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20120703165410) do
   create_table "cuota", :force => true do |t|
     t.string   "estado"
     t.string   "liquidacion"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.date     "fecha"
     t.float    "valor"
     t.float    "valor_credito"
@@ -44,6 +44,11 @@ ActiveRecord::Schema.define(:version => 20120703165410) do
     t.float    "mora"
     t.float    "descuento"
     t.float    "saldo"
+    t.string   "num_deposito"
+    t.integer  "usuario_id"
+    t.boolean  "revisado"
+    t.text     "observaciones"
+    t.integer  "num_liquidacion"
   end
 
   create_table "depositos", :force => true do |t|
@@ -124,6 +129,8 @@ ActiveRecord::Schema.define(:version => 20120703165410) do
     t.date     "fecha_ingreso"
     t.integer  "num_dias_descuento"
     t.string   "rvi"
+    t.integer  "dias_mora"
+    t.string   "estado_pedido"
   end
 
   create_table "permisos", :force => true do |t|
