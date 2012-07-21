@@ -3,5 +3,5 @@ class Pedido < ActiveRecord::Base
 :tipo_pago,:fecha_ingreso, :num_dias_descuento,:rvi,:dias_mora,:estado_pedido
   belongs_to :asesor
   has_many :producto_pedidos
-  has_many :cuotas
+  has_many :cuota
 end
