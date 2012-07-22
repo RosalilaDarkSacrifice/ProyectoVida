@@ -1,7 +1,6 @@
-Piramide
-
-rails g scaffold GerenteComercial nombre:string comision_credito:float
-rails g scaffold DirectorComercial nombre:string gerente_comercial_id:integer comision_credito:float
-rails g scaffold Coordinador nombre:string director_comercial_id:integer comision_credito:float
-rails g scaffold Moderador nombre:string coordinador_id:integer comision_credito:float
-rails g scaffold Asesor nombre:string identidad:string moderador_id:integer comision_credito:float comision_contado_empresa:float comision_contado_asesor:float
+Pequeños TODOs:
+*Hacer movimientos de inventario con pedidos e ingresos de productos
+*Validar los permisos en el server-side
+*Preguntar si solo el administrador puede manejar el inventario
+*Terminar el buscador
+*Agregar cuotas automaticamente al agregar pedido

@@ -333,7 +333,7 @@
 
 <!-- Form para agregar un nuevo producto -->
 
-<!--
+<% if soyAdministrador || soyReferenciacion %>
 
 </br>
 </br>
@@ -373,8 +373,7 @@
 </br>
 
 
-
--->
+<%end%>
 
 <br/>
 
@@ -396,7 +395,9 @@
     <td><%= cuotum.estado %></td>
     <td><%= cuotum.liquidacion %></td>
     <td><%= link_to 'Mostrar', cuotum %></td>
+    <%if soyCobranza || soyAdministrador%>
     <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
+    <%end%>
     <td><%= link_to 'Eliminar', cuotum, confirm: 'Esta seguro?', method: :delete %></td>
   </tr>
 <% end %>
