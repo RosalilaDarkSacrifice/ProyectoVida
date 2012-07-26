@@ -2,6 +2,95 @@
 
 </br>
 
+<%= form_tag buscar_path do %>
+<table>
+  <tr>
+    <td>
+      <b>Fecha de inicio:</b>
+    </td>
+    <td>
+      <%= date_select :fecha_inicio, params[:fecha_inicio] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Fecha final:</b>
+    </td>
+    <td>
+      <%= date_select :fecha_final, params[:fecha_final] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Nombre:</b>
+    </td>
+    <td>
+      <%= text_field_tag :nombre_cliente, params[:nombre_cliente] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Numero de pedido:</b>
+    </td>
+    <td>
+      <%= text_field_tag :numero_pedido, params[:numero_pedido] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>RVI:</b>
+    </td>
+    <td>
+      <%= text_field_tag :rvi, params[:rvi] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asesor:</b>
+    </td>
+    <td>
+      <%= text_field_tag :asesor, params[:asesor] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Estado:</b>
+    </td>
+    <td>
+      <%= text_field_tag :estado, params[:estado] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Identidad:</b>
+    </td>
+    <td>
+      <%= text_field_tag :identidad_cliente, params[:identidad_cliente] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= submit_tag "Buscar" %>
+    </td>
+  </tr>
+</table>
+<%end%>
+
+</br>
+</br>
+
+<td><%= Pedido.all[0].fecha_inicio_pago.year %></td>
+
+<p id="probando" style="display:none"></p>
+
 <table>
   <tr>
     <th>Asesor</th>
@@ -30,8 +119,10 @@
     <td><%= pedido.numero_cuotas %></td>
     <td><%= pedido.fecha_inicio_pago %></td>
     <td><%= link_to 'Mostrar', pedido %></td>
+    <%if soyAdministrador %>
     <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
     <td><%= link_to 'Eliminar', pedido, confirm: 'Esta seguro?', method: :delete %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>

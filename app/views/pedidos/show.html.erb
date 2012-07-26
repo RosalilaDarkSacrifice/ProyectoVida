@@ -384,21 +384,21 @@
 <table>
   <tr>
     <th>Estado</th>
-    <th>Liquidacion</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% Cuotum.all.each do |cuotum| %>
+<% Cuotum.where(:pedido_id=>@pedido.id).each do |cuotum| %>
   <tr>
     <td><%= cuotum.estado %></td>
-    <td><%= cuotum.liquidacion %></td>
     <td><%= link_to 'Mostrar', cuotum %></td>
     <%if soyCobranza || soyAdministrador%>
     <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
     <%end%>
+    <%if soyAdministrador%>
     <td><%= link_to 'Eliminar', cuotum, confirm: 'Esta seguro?', method: :delete %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>

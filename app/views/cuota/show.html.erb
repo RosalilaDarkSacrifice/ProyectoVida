@@ -84,8 +84,11 @@
     <td>
       <p>
 	<b>Gestor de Cobro</b>
-	<% user = Usuario.find(@cuotum.usuario_id) %>
-	<%= user.nombre %>
+	<!-- Cambio de Ahmed-->
+        <% if @cuotum.usuario_id %>
+	  <% user = Usuario.find(@cuotum.usuario_id) %>
+  	  <%= user.nombre %>
+        <%end%>
       </p>
     </td>
     <td>
@@ -96,6 +99,6 @@
     </td>
   </tr>
 </table>
-
+<%= link_to 'Ver pedido', @cuotum.pedido %> |
 <%= link_to 'Edit', edit_cuotum_path(@cuotum) %> |
 <%= link_to 'Back', cuota_path %>

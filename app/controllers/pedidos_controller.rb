@@ -44,6 +44,19 @@ class PedidosController < ApplicationController
 
     respond_to do |format|
       if @pedido.save
+
+	#crear cuotas
+	#crearCuotas @pedido.numero_cuotas, @pedido.id
+        i=0
+        while i<@pedido.numero_cuotas
+          c = Cuotum.new
+          c.pedido_id=@pedido.id
+          c.estado="Pendiente"
+          c.num_cuota=i+1
+          c.save
+          i+=1
+        end
+
         format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
         format.json { render json: @pedido, status: :created, location: @pedido }
       else
@@ -79,5 +92,59 @@ class PedidosController < ApplicationController
       format.html { redirect_to pedidos_url }
       format.json { head :no_content }
     end
+  end
+
+
+  def buscar
+    nombre=params[:nombre_cliente]
+    numero=params[:numero_pedido]
+    rvi=params[:rvi]
+    asesor=params[:asesor]
+    estado=params[:estado]
+    identidad=params[:identidad_cliente]
+    fecha_inicio=params[:fecha_inicio]
+    fecha_final=params[:fecha_final]
+
+    str=""
+    if nombre!=""
+      str+="nombre_cliente = "+ "\"" + nombre + "\" "
+    end
+
+    if numero!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="numero_pedido = "+ "\"" + numero + "\" "
+    end
+
+    if rvi!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="rvi = "+ "\"" + rvi + "\" "
+    end
+
+    if asesor!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="asesor_id = "+ Asesor.find_by_nombre(asesor).id.to_s + " "
+    end
+
+    if identidad!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="identidad_cliente = "+ "\"" + identidad + "\" "
+    end
+
+    #if str!=""
+    #  str+= "and "
+    #end
+    #str+="fecha_ingreso BETWEEN " + fecha_inicio["(1i)"] + "/" + fecha_inicio["(2i)"] + "/" + fecha_inicio["(3i)"] + " and " + fecha_final["(1i)"] + "/" + fecha_final["(2i)"] + "/" + fecha_final["(3i)"]
+
+    @pedidos = Pedido.where(str)
+
+    render :index
   end
 end

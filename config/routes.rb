@@ -43,7 +43,9 @@ ProyectoVida::Application.routes.draw do
 
   get "ventas" => "ventas#index", :as => "ventas"
   get "buscador" => "buscador#index", :as => "buscador"
-  get "buscar" => "buscador#buscar", :as => "buscar"
+
+
+  post "buscar" => "pedidos#buscar", :as => "buscar"
   
 
   # The priority is based upon order of creation:

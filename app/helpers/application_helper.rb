@@ -35,4 +35,17 @@ module ApplicationHelper
     end
     return false
   end
+
+  def usuariosAdministrador
+    return Usuario.where(:id=>1)
+  end
+  def usuariosReferenciacion
+    return Usuario.where(:id=>2)
+  end
+  def usuariosAsistente
+    return Usuario.where(:id=>3)
+  end
+  def usuariosCobranza
+    return Usuario.where(:id=>4)
+  end
 end
