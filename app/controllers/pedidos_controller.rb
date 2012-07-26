@@ -138,10 +138,22 @@ class PedidosController < ApplicationController
       str+="identidad_cliente = "+ "\"" + identidad + "\" "
     end
 
-    #if str!=""
-    #  str+= "and "
-    #end
+    if str!=""
+      str+= "and "
+    end
     #str+="fecha_ingreso BETWEEN " + fecha_inicio["(1i)"] + "/" + fecha_inicio["(2i)"] + "/" + fecha_inicio["(3i)"] + " and " + fecha_final["(1i)"] + "/" + fecha_final["(2i)"] + "/" + fecha_final["(3i)"]
+
+    anio_inicio=params[:anio_inicio][0]
+    mes_inicio=params[:mes_inicio][0]
+    dia_inicio=params[:dia_inicio][0]
+
+    anio_final=params[:anio_final][0]
+    mes_final=params[:mes_final][0]
+    dia_final=params[:dia_final][0]
+
+    str+=" fecha_ingreso BETWEEN '" + anio_inicio + "-" + mes_inicio + "-" + dia_inicio + "' and '" + anio_final + "-" + mes_final + "-" + dia_final + "'"
+
+    #str+=" fecha_ingreso BETWEEN '2012-05-01' and '2012-09-04'"
 
     @pedidos = Pedido.where(str)
 
