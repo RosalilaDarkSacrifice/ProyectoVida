@@ -292,8 +292,8 @@
 <tr>
     <td>
       <p>
-        <b>Observaciones:</b><br/>
-        <%= @pedido.observaciones %>
+        <b>RVI:</b><br/>
+        <%= @pedido.rvi %>
       </p>
     </td>
 </tr>

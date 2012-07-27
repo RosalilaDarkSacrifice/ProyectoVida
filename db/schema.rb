@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120721162035) do
+ActiveRecord::Schema.define(:version => 20120727054815) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20120721162035) do
     t.string   "rvi"
     t.integer  "dias_mora"
     t.string   "estado_pedido"
+    t.text     "observaciones"
   end
 
   create_table "permisos", :force => true do |t|
