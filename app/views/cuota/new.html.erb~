@@ -1,4 +1,4 @@
-<h1>Nueva Cuota</h1>
+<h1>New cuotum</h1>
 <br/>
 
 <%= render 'form' %>

@@ -92,7 +92,9 @@
 </br>
 </br>
 
+#<td><%= Pedido.all[0].fecha_inicio_pago.year %></td>
 
+#<p id="probando" style="display:none"></p>
 
 <table>
   <tr>
