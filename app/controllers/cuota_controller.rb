@@ -59,7 +59,24 @@ class CuotaController < ApplicationController
     @cuotum = Cuotum.find(params[:id])
 
     respond_to do |format|
+      deposito_ant=@cuotum.valor_deposito
       if @cuotum.update_attributes(params[:cuotum])
+        if deposito_ant!=@cuotum.valor_deposito
+          if aplicaDescuento @cuotum.pedido.fecha_inicio_pago, @cuotum.fecha, @cuotum.pedido.num_dias_descuento, @cuotum.num_cuota
+            @cuotum.descuento=@cuotum.pedido.descuento
+            @cuotum.save
+          else
+            @cuotum.descuento=0
+            @cuotum.save
+          end
+          if aplicaMora @cuotum.pedido.fecha_inicio_pago, @cuotum.fecha, @cuotum.pedido.dias_mora, @cuotum.num_cuota
+            @cuotum.mora=@cuotum.pedido.mora
+            @cuotum.save
+          else
+            @cuotum.mora=0
+            @cuotum.save
+          end
+        end
         format.html { redirect_to @cuotum, notice: 'Cuotum was successfully updated.' }
         format.json { head :no_content }
       else

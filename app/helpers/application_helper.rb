@@ -48,4 +48,10 @@ module ApplicationHelper
   def usuariosCobranza
     return Usuario.where(:id=>4)
   end
+
+
+  def getValorCuota pedido_id
+    p=Pedido.find_by_id(pedido_id)
+    return number_to_currency((p.valor_credito-p.abono_inicial)/p.numero_cuotas, :format => "%n")
+  end
 end

@@ -22,8 +22,8 @@
 
   <td>
   <div id="campopedido" class="field">
-    <%= f.label :asesor_id %><br/>
-    <%= f.collection_select :asesor_id, Asesor.all, :id, :nombre %>
+    <%= f.label :rvi %><br/>
+    <%= f.text_field :rvi %>
   </div>
   </td>
 
@@ -246,12 +246,6 @@
 </tr>
 
 <tr>
-  <td>
-  <div id="campopedido" class="field">
-    <%= f.label :valor_cuota %><br/>
-    <%= f.text_field :valor_cuota, :min=>0, :value=>0 %>
-  </div>
-  </td>
 
   <td>
   <div id="campopedido" class="field">
@@ -266,15 +260,16 @@
     <%= f.text_field :mora, :min=>0, :value=>0 %>
   </div>
   </td>
-</tr>
 
-<tr>
   <td>
   <div id="campopedido" class="field">
     <%= f.label :tipo_pago %><br/>
     <%= f.select :tipo_pago, ["Crédito", "Contado asesor", "Contado empresa"] %>
   </div>
   </td>
+</tr>
+
+<tr>
 
   <td>
   <div id="campopedido" class="field">
@@ -294,8 +289,8 @@
 <tr>
   <td>
   <div id="campopedido" class="field">
-    <%= f.label :rvi %><br/>
-    <%= f.text_field :rvi %>
+    <%= f.label :asesor_id %><br/>
+    <%= f.collection_select :asesor_id, Asesor.all, :id, :nombre %>
   </div>
   </td>
 

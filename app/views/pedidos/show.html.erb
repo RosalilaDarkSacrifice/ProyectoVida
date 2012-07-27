@@ -13,8 +13,8 @@
 
     <td>
       <p>
-        <b>Asesor:</b><br/>
-        <%= link_to @pedido.asesor.nombre,@pedido.asesor %>
+        <b>RVI:</b><br/>
+        <%= @pedido.rvi %>
       </p>
     </td>
 
@@ -250,7 +250,12 @@
         <%= @pedido.tipo_pago %>
       </p>
     </td>
-
+    <td>
+      <p>
+        <b>Valor cuota:</b><br/>
+        <%= getValorCuota @pedido.id %>
+      </p>
+    </td>
     <td>
       <p>
         <b>Fecha inicio pago:</b><br/>
@@ -269,8 +274,8 @@
 <tr>
     <td>
       <p>
-        <b>RVI:</b><br/>
-        <%= @pedido.rvi %>
+        <b>Asesor:</b><br/>
+        <%= link_to @pedido.asesor.nombre,@pedido.asesor %>
       </p>
     </td>
 

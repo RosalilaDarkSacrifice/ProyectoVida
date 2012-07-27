@@ -18,24 +18,30 @@
     <div class="field">
     <%= f.label :fecha %><br />
     <%= f.date_select :fecha %>
-  </div>
-  </div>
+    </div>
   </td>
+</tr> 
 
-  <td>
-    <div class="field">
-    <%= f.label "Valor Cuota" %><br />
-    <%= f.number_field :valor , :value => 0 %>
-  </div>
-  </td>
+<tr>
   <td>
     <div class="field">
     <%= f.label "Valor Crédito" %><br />
-    <%= f.number_field :valor_credito %>
-  </div>
-  </div>
+    <%= @cuotum.pedido.valor_credito %>
+    </div>
   </td>
-</tr> 
+  <td>
+    <div class="field">
+    <%= f.label "Valor Cuota" %><br />
+    <%= getValorCuota @cuotum.pedido_id %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Número de Cuota" %><br />
+    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
+  </div>
+  </td>	
+</tr>
 
 <tr>
   <td>
@@ -48,13 +54,13 @@
   <td>
     <div class="field">
     <%= f.label "Valor Depósito" %><br />
-    <%= f.number_field :valor_deposito , :value => 0 %>
+    <%= f.number_field :valor_deposito , :min=>0 %>
     </div>
   </td>
   <td>
     <div class="field">
       <%= f.label "Mora" %><br />
-      <%= f.number_field :mora , :value => 0 %>
+      <%= f.number_field :mora , :min => 0 %>
     </div>
   </td>
 </tr> 
@@ -63,22 +69,16 @@
   <td>
     <div class="field">
     <%= f.label "Descuento" %><br />
-    <%= f.number_field :descuento %>
+    <%= f.number_field :descuento , :min=>0%>
     </div>
   </td>
 
   <td>
     <div class="field">
     <%= f.label "Saldo" %><br />
-    <%= f.number_field :saldo %>
+    <%= f.number_field :saldo , :min=>0%>
   </div>
   </td>
-  <td>
-    <div class="field">
-    <%= f.label "Número de Cuota" %><br />
-    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
-  </div>
-  </td>	
 </tr>
 
 <tr>

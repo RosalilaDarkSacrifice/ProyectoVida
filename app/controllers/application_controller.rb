@@ -21,4 +21,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def aplicaDescuento fecha_pedido, fecha_cuota, dias_descuento, numero_cuota
+    fecha_ideal=fecha_pedido
+    fecha_ideal=fecha_ideal>>(numero_cuota-1)
+    fecha_ideal=fecha_ideal+(dias_descuento)
+
+    return fecha_cuota<=fecha_ideal
+  end
+
+  def aplicaMora fecha_pedido, fecha_cuota, dias_mora, numero_cuota
+    fecha_ideal=fecha_pedido
+    fecha_ideal=fecha_ideal>>(numero_cuota)
+    fecha_ideal=fecha_ideal+(dias_mora)
+
+    return fecha_cuota>fecha_ideal
+  end
+
 end
