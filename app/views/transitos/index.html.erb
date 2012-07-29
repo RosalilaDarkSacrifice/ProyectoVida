@@ -2,6 +2,36 @@
 
 </br>
 
+<%= form_tag buscartransito_path do %>
+<table>
+  <tr>
+    <td>
+      <b>Asesor:</b>
+    </td>
+    <td>
+      <%= text_field_tag :asesor, params[:asesor] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Libro:</b>
+    </td>
+    <td>
+      <%= text_field_tag :producto, params[:producto] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= submit_tag "Buscar" %>
+    </td>
+  </tr>
+</table>
+<%end%>
+
+</br>
+
 <table>
   <tr>
     <th>Producto</th>

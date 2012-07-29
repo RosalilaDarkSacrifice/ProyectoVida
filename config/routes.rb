@@ -46,6 +46,7 @@ ProyectoVida::Application.routes.draw do
 
 
   post "buscar" => "pedidos#buscar", :as => "buscar"
+  post "buscartransito" => "transitos#buscartransito", :as => "buscartransito"
   
 
   # The priority is based upon order of creation:

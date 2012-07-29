@@ -80,4 +80,26 @@ class TransitosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def buscartransito
+    asesor=params[:asesor]
+    producto=params[:producto]
+
+    str=""
+
+    if asesor!=""
+      str+="asesor_id = "+ Asesor.find_by_nombre(asesor).id.to_s + " "
+    end
+
+    if producto!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="producto_id = "+ Producto.find_by_nombre(producto).id.to_s + " "
+    end
+
+    @transitos = Transito.where(str)
+
+    render :index
+  end
 end
