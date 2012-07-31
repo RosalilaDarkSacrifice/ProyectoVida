@@ -1,0 +1,26 @@
+<h1>Listado de Cuotas</h1>
+<br/>
+
+<table>
+  <tr>
+    <th>Número Pedido</th>
+    <th>Número de Cuota</th>
+    <th>Gestor de Cobro</th>
+    <th></th>
+  </tr>
+
+<% usuarios=Usuario.where(:rol_id=>4) %>
+<% i=0 %>
+<% @cuotas.each do |cuotum| %>
+  <tr>
+    <td><%= cuotum.pedido.numero_pedido %></td>
+    <td><%= cuotum.num_cuota %></td>
+    <td><%= usuarios[i%usuarios.size].nombre %></td>
+  </tr>
+  <% i+=1 %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Repartir', reparticion_path %>

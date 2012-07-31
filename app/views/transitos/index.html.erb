@@ -9,7 +9,7 @@
       <b>Asesor:</b>
     </td>
     <td>
-      <%= text_field_tag :asesor, params[:asesor] %>
+      <%= collection_select(:asesor,@asdf, Asesor.all, :nombre, :nombre,{ :include_blank => true }) %>
     </td>
   </tr>
 
@@ -18,7 +18,7 @@
       <b>Libro:</b>
     </td>
     <td>
-      <%= text_field_tag :producto, params[:producto] %>
+      <%= collection_select(:producto,@asdf, Producto.all, :nombre, :nombre,{ :include_blank => true }) %>
     </td>
   </tr>
 

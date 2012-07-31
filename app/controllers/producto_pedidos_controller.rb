@@ -37,6 +37,13 @@ class ProductoPedidosController < ApplicationController
     @producto_pedido = ProductoPedido.find(params[:id])
   end
 
+  def modificarTransito cantidad
+    inventario=Transito.where(:producto_id=>@producto_pedido.producto_id)
+    inventario=inventario.where(:asesor_id=>@producto_pedido.pedido.asesor_id)[0]
+    inventario.cantidad-=cantidad
+    inventario.save
+  end
+
   # POST /producto_pedidos
   # POST /producto_pedidos.json
   def create
@@ -44,6 +51,7 @@ class ProductoPedidosController < ApplicationController
 
     respond_to do |format|
       if @producto_pedido.save
+        modificarTransito @producto_pedido.cantidad
         format.js
         unless request.xhr?
           format.html { redirect_to @producto_pedido.pedido, notice: 'Producto pedido was successfully created.' }

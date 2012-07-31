@@ -57,9 +57,12 @@ class TransitosController < ApplicationController
   # PUT /transitos/1.json
   def update
     @transito = Transito.find(params[:id])
+    cantidad_anterior=@transito.cantidad
 
     respond_to do |format|
-      if @transito.update_attributes(params[:transito])
+      dar=params[:transito][:dar].to_f
+      quitar=params[:transito][:quitar].to_f
+      if @transito.update_attributes(:cantidad=>cantidad_anterior+dar-quitar)
         format.html { redirect_to @transito, notice: 'Transito was successfully updated.' }
         format.json { head :no_content }
       else
@@ -83,7 +86,13 @@ class TransitosController < ApplicationController
 
   def buscartransito
     asesor=params[:asesor]
+    if asesor==[""]
+      asesor=""
+    end
     producto=params[:producto]
+    if producto==[""]
+      producto=""
+    end
 
     str=""
 

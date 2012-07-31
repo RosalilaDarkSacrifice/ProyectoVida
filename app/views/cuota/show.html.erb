@@ -54,7 +54,7 @@
     <td>
       <p>
 	<b>Saldo</b>
-	<%= @cuotum.saldo %>
+	<%= getSaldo(@cuotum.pedido.id, @cuotum.num_cuota) %>
       </p>
     </td>
   </tr>

@@ -19,10 +19,22 @@
     <%= f.label :asesor_id %><br />
     <%= f.collection_select :asesor_id, Asesor.all, :id, :nombre %>
   </div>
+  <% if @transito.cantidad==nil %>
   <div class="field">
     <%= f.label :cantidad %><br />
-    <%= f.number_field :cantidad, :min=>0, :value=>1 %>
+    <%= f.number_field :cantidad, :min=>0, :value=>0 %>
   </div>
+  <% else %>
+  <div class="field">
+    Dar libros:<br />
+    <%= f.number_field :dar, :min=>0, :value=>0 %>
+  </div>
+  <div class="field">
+    Quitar libros:<br />
+    <%= f.number_field :quitar, :min=>0, :value=>0 %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

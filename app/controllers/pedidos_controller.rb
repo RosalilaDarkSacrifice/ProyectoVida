@@ -100,6 +100,9 @@ class PedidosController < ApplicationController
     numero=params[:numero_pedido]
     rvi=params[:rvi]
     asesor=params[:asesor]
+    if asesor==[""]
+      asesor=""
+    end
     estado=params[:estado]
     identidad=params[:identidad_cliente]
     fecha_inicio=params[:fecha_inicio]
