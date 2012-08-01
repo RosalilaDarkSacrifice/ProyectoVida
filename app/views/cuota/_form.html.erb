@@ -20,6 +20,11 @@
     <%= f.date_select :fecha %>
     </div>
   </td>
+  <td>
+    <div class="field">
+    <%= f.label "Número de Cuota" %><br />
+    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
+  </div>
 </tr> 
 
 <tr>
@@ -36,10 +41,9 @@
     </div>
   </td>
   <td>
-    <div class="field">
-    <%= f.label "Número de Cuota" %><br />
-    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
-  </div>
+    Saldo<br />
+    <%= getSaldo(@cuotum.pedido.id, @cuotum.num_cuota) %>
+  </td>
   </td>	
 </tr>
 
@@ -57,27 +61,28 @@
     <%= f.number_field :valor_deposito , :min=>0 %>
     </div>
   </td>
-  <td>
-    <div class="field">
-      <%= f.label "Mora" %><br />
-      <%= f.number_field :mora , :min => 0 %>
-    </div>
-  </td>
 </tr> 
 
 <tr>
   <td>
     <div class="field">
-    <%= f.label "Descuento" %><br />
-    <%= f.number_field :descuento , :min=>0%>
+    <%= f.label "Mora" %><br />
+    <% if soyAdministrador || soyAsistente %>
+      <%= f.number_field :mora , :min => 0 %>
+    <% else %>
+      <%= @cuotum.mora %>
+    <% end %>
     </div>
   </td>
-
   <td>
     <div class="field">
-    <%= f.label "Saldo" %><br />
-    <%= f.number_field :saldo , :min=>0%>
-  </div>
+    <%= f.label "Descuento" %><br />
+    <% if soyAdministrador || soyAsistente %>
+      <%= f.number_field :descuento , :min=>0%>
+    <% else %>
+      <%= @cuotum.descuento %>
+    <% end %>
+    </div>
   </td>
 </tr>
 
@@ -85,7 +90,7 @@
   <td>
     <div class="field">
     <%= f.label :estado %><br />
-    <%= f.select :estado , ["Pagado","Ilocalizable"] %>
+    <%= f.select :estado , ["Pagado","Pendiente"] %>
     </div>
   </td>
 <% if soyAsistente || soyAdministrador %>
@@ -112,12 +117,17 @@
     <%= f.text_area :observaciones,:size => "40x10" %>
   </div>
   </td>	
+
+<!--
   <td>
     <div class="field">
     <%= f.label "Número de Pedido" %><br />
+    <% @cuotum.pedido.numero_pedido %>
     <%= f.collection_select :pedido_id,Pedido.all,:id,:numero_pedido %>
   </div>
   </td>
+-->
+
 </tr>
 
 <tr>

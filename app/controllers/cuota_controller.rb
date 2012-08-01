@@ -1,8 +1,24 @@
 class CuotaController < ApplicationController
+
+  def getPrimeraCuotaPendiente pedido_id
+    pedido=Pedido.find_by_id(pedido_id)
+    return pedido.cuota.order("num_cuota").where(:estado=>"Pendiente")[0]
+  end
+
   # GET /cuota
   # GET /cuota.json
   def index
-    @cuota = Cuotum.all
+    if soyAsistente
+      @cuota=[]
+      Pedido.all.each do |p|
+        c=getPrimeraCuotaPendiente p.id
+        if c!=nil
+          @cuota.push(c)
+        end
+      end
+    else
+      @cuota = Cuotum.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

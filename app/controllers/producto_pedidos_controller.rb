@@ -40,8 +40,16 @@ class ProductoPedidosController < ApplicationController
   def modificarTransito cantidad
     inventario=Transito.where(:producto_id=>@producto_pedido.producto_id)
     inventario=inventario.where(:asesor_id=>@producto_pedido.pedido.asesor_id)[0]
-    inventario.cantidad-=cantidad
-    inventario.save
+    if inventario==nil
+      t=Transito.new
+      t.producto_id = @producto_pedido.producto_id
+      t.asesor_id = @producto_pedido.pedido.asesor_id
+      t.cantidad = -cantidad
+      t.save
+    else
+      inventario.cantidad-=cantidad
+      inventario.save
+    end
   end
 
   # POST /producto_pedidos
