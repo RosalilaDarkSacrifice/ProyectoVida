@@ -7,9 +7,6 @@
     <th>Numero</th>
     <th>Transito</th>
     <th>Cantidad</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @nota_entregas.each do |nota_entrega| %>
@@ -19,8 +16,7 @@
     <td><%= nota_entrega.transito.nombre %></td>
     <td><%= nota_entrega.cantidad %></td>
     <td><%= link_to 'Mostrar', nota_entrega %></td>
-    <td><%= link_to 'Editar', edit_nota_entrega_path(nota_entrega) %></td>
-    <td><%= link_to 'Borrar', nota_entrega, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Eliminar', nota_entrega, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

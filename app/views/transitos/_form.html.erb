@@ -26,12 +26,8 @@
   </div>
   <% else %>
   <div class="field">
-    Dar libros:<br />
-    <%= f.number_field :dar, :min=>0, :value=>0 %>
-  </div>
-  <div class="field">
-    Quitar libros:<br />
-    <%= f.number_field :quitar, :min=>0, :value=>0 %>
+    Cantidad:<br />
+    <%= f.number_field :cantidad%>
   </div>
   <% end %>
 
