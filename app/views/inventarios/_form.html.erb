@@ -15,10 +15,12 @@
     <%= f.label :producto_id %><br />
     <%= f.collection_select :producto_id, Producto.all, :id, :nombre %>
   </div>
+<%if @inventario.cantidad!=nil%>
   <div class="field">
     <%= f.label :cantidad %><br />
-    <%= f.number_field :cantidad, :min=>0, :value=>1 %>
+    <%= f.number_field :cantidad %>
   </div>
+<%end%>
   <div class="actions">
     <%= f.submit %>
   </div>

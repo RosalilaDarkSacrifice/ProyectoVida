@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727054815) do
+ActiveRecord::Schema.define(:version => 20121026155026) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
@@ -67,6 +67,17 @@ ActiveRecord::Schema.define(:version => 20120727054815) do
     t.datetime "updated_at",           :null => false
   end
 
+  create_table "entrada_inventarios", :force => true do |t|
+    t.string   "numero"
+    t.date     "fecha"
+    t.integer  "inventario_id"
+    t.string   "proveedor"
+    t.integer  "cantidad"
+    t.float    "valor_unitario"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "gerente_comercials", :force => true do |t|
     t.string   "nombre"
     t.float    "comision_credito"
@@ -87,6 +98,26 @@ ActiveRecord::Schema.define(:version => 20120727054815) do
     t.float    "comision_credito"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "nota_devolucions", :force => true do |t|
+    t.date     "fecha"
+    t.string   "numero"
+    t.integer  "asesor_id"
+    t.integer  "producto_id"
+    t.integer  "cantidad"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "nota_entregas", :force => true do |t|
+    t.date     "fecha"
+    t.string   "numero"
+    t.integer  "asesor_id"
+    t.integer  "producto_id"
+    t.integer  "cantidad"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "pedidos", :force => true do |t|

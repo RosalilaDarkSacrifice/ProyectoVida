@@ -41,6 +41,7 @@ class InventariosController < ApplicationController
   # POST /inventarios.json
   def create
     @inventario = Inventario.new(params[:inventario])
+	@inventario.cantidad=0
 
     respond_to do |format|
       if @inventario.save

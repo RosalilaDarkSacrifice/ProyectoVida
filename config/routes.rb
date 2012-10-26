@@ -1,5 +1,11 @@
 ProyectoVida::Application.routes.draw do
 
+  resources :entrada_inventarios
+
+  resources :nota_devolucions
+
+  resources :nota_entregas
+
   resources :coordinadors
 
   resources :asesors

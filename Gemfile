@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'execjs'
 gem 'therubyracer'
 
+gem 'thin'
+
 gem "bcrypt-ruby", :require => "bcrypt"
 
 # Gems used only for assets and not required
