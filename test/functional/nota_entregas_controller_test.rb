@@ -18,7 +18,7 @@ class NotaEntregasControllerTest < ActionController::TestCase
 
   test "should create nota_entrega" do
     assert_difference('NotaEntrega.count') do
-      post :create, nota_entrega: { asesor_id: @nota_entrega.asesor_id, cantidad: @nota_entrega.cantidad, fecha: @nota_entrega.fecha, numero: @nota_entrega.numero, producto_id: @nota_entrega.producto_id }
+      post :create, nota_entrega: { cantidad: @nota_entrega.cantidad, fecha: @nota_entrega.fecha, numero: @nota_entrega.numero, transito_id: @nota_entrega.transito_id }
     end
 
     assert_redirected_to nota_entrega_path(assigns(:nota_entrega))
@@ -35,7 +35,7 @@ class NotaEntregasControllerTest < ActionController::TestCase
   end
 
   test "should update nota_entrega" do
-    put :update, id: @nota_entrega, nota_entrega: { asesor_id: @nota_entrega.asesor_id, cantidad: @nota_entrega.cantidad, fecha: @nota_entrega.fecha, numero: @nota_entrega.numero, producto_id: @nota_entrega.producto_id }
+    put :update, id: @nota_entrega, nota_entrega: { cantidad: @nota_entrega.cantidad, fecha: @nota_entrega.fecha, numero: @nota_entrega.numero, transito_id: @nota_entrega.transito_id }
     assert_redirected_to nota_entrega_path(assigns(:nota_entrega))
   end
 

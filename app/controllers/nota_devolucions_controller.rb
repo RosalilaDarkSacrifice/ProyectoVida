@@ -44,6 +44,11 @@ class NotaDevolucionsController < ApplicationController
 
     respond_to do |format|
       if @nota_devolucion.save
+
+				transito=@nota_devolucion.transito
+				transito.cantidad-=@nota_devolucion.cantidad
+				transito.save
+
         format.html { redirect_to @nota_devolucion, notice: 'Nota devolucion was successfully created.' }
         format.json { render json: @nota_devolucion, status: :created, location: @nota_devolucion }
       else

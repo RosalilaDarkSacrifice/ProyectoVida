@@ -3,13 +3,11 @@
 one:
   fecha: 2012-10-26
   numero: MyString
-  asesor_id: 1
-  producto_id: 1
+  transito_id: 1
   cantidad: 1
 
 two:
   fecha: 2012-10-26
   numero: MyString
-  asesor_id: 1
-  producto_id: 1
+  transito_id: 1
   cantidad: 1

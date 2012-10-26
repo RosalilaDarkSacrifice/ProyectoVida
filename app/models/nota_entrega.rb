@@ -1,3 +1,4 @@
 class NotaEntrega < ActiveRecord::Base
-  attr_accessible :asesor_id, :cantidad, :fecha, :numero, :producto_id
+  attr_accessible :cantidad, :fecha, :numero, :transito_id
+	belongs_to :transito
 end

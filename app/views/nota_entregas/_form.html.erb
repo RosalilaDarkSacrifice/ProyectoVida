@@ -20,12 +20,8 @@
     <%= f.text_field :numero %>
   </div>
   <div class="field">
-    <%= f.label :asesor_id %><br />
-    <%= f.number_field :asesor_id %>
-  </div>
-  <div class="field">
-    <%= f.label :producto_id %><br />
-    <%= f.number_field :producto_id %>
+    <%= f.label :transito_id %><br />
+    <%= f.collection_select :transito_id, Transito.all, :id, :nombre %>
   </div>
   <div class="field">
     <%= f.label :cantidad %><br />

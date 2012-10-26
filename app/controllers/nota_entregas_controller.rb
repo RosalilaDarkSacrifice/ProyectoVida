@@ -44,6 +44,11 @@ class NotaEntregasController < ApplicationController
 
     respond_to do |format|
       if @nota_entrega.save
+
+				transito=@nota_entrega.transito
+				transito.cantidad+=@nota_entrega.cantidad
+				transito.save
+
         format.html { redirect_to @nota_entrega, notice: 'Nota entrega was successfully created.' }
         format.json { render json: @nota_entrega, status: :created, location: @nota_entrega }
       else

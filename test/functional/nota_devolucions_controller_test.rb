@@ -18,7 +18,7 @@ class NotaDevolucionsControllerTest < ActionController::TestCase
 
   test "should create nota_devolucion" do
     assert_difference('NotaDevolucion.count') do
-      post :create, nota_devolucion: { asesor_id: @nota_devolucion.asesor_id, cantidad: @nota_devolucion.cantidad, fecha: @nota_devolucion.fecha, numero: @nota_devolucion.numero, producto_id: @nota_devolucion.producto_id }
+      post :create, nota_devolucion: { cantidad: @nota_devolucion.cantidad, fecha: @nota_devolucion.fecha, numero: @nota_devolucion.numero, transito_id: @nota_devolucion.transito_id }
     end
 
     assert_redirected_to nota_devolucion_path(assigns(:nota_devolucion))
@@ -35,7 +35,7 @@ class NotaDevolucionsControllerTest < ActionController::TestCase
   end
 
   test "should update nota_devolucion" do
-    put :update, id: @nota_devolucion, nota_devolucion: { asesor_id: @nota_devolucion.asesor_id, cantidad: @nota_devolucion.cantidad, fecha: @nota_devolucion.fecha, numero: @nota_devolucion.numero, producto_id: @nota_devolucion.producto_id }
+    put :update, id: @nota_devolucion, nota_devolucion: { cantidad: @nota_devolucion.cantidad, fecha: @nota_devolucion.fecha, numero: @nota_devolucion.numero, transito_id: @nota_devolucion.transito_id }
     assert_redirected_to nota_devolucion_path(assigns(:nota_devolucion))
   end
 
