@@ -18,7 +18,7 @@
       <b>Libro:</b>
     </td>
     <td>
-      <%= collection_select(:producto,@asdf, Producto.all, :nombre, :nombre,{ :include_blank => true }) %>
+      <%= collection_select(:inventario,@asdf, Inventario.all, :nombre, :nombre,{ :include_blank => true }) %>
     </td>
   </tr>
 
@@ -34,7 +34,7 @@
 
 <table>
   <tr>
-    <th>Producto</th>
+    <th>Producto en inventario</th>
     <th>Asesor</th>
     <th>Cantidad</th>
     <th></th>
@@ -44,7 +44,7 @@
 
 <% @transitos.each do |transito| %>
   <tr>
-    <td><%= transito.producto.nombre %></td>
+    <td><%= transito.inventario.nombre %></td>
     <td><%= link_to transito.asesor.nombre, transito.asesor %></td>
     <td><%= transito.cantidad %></td>
     <td><%= link_to 'Mostrar', transito %></td>
@@ -57,3 +57,9 @@
 <br />
 
 <%= link_to 'Agregar producto', new_transito_path %>
+<br/>
+<br/>
+<%= link_to 'Listado de notas de entrega', nota_entregas_path %>
+<br/>
+<br/>
+<%= link_to 'Listado de notas de devolucion', nota_devolucions_path %>

@@ -48,6 +48,9 @@ class PedidosController < ApplicationController
 	#crear cuotas
 	#crearCuotas @pedido.numero_cuotas, @pedido.id
         i=0
+				if @pedido.abono_inicial>0
+					i+=1
+				end
         while i<@pedido.numero_cuotas
           c = Cuotum.new
           c.pedido_id=@pedido.id
@@ -89,6 +92,11 @@ class PedidosController < ApplicationController
     @pedido.destroy
 
     respond_to do |format|
+
+			@pedido.cuota.each do |c|
+				c.destroy
+			end
+
       format.html { redirect_to pedidos_url }
       format.json { head :no_content }
     end

@@ -4,6 +4,6 @@ class Inventario < ActiveRecord::Base
 	has_many :entrada_inventarios
 
 	def nombre
-		return producto.nombre
+		return producto.nombre# + " (" + cantidad.to_s + ")"
 	end
 end

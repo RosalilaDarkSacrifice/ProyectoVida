@@ -96,4 +96,17 @@ module ApplicationHelper
     end
     return number_to_currency(credito_actual, :format => "%n")
   end
+
+
+	def getCantPedidosPorNumCuota num_cuota
+		res=0
+		Pedido.all.each do |p|
+			c=p.cuota.where(:estado=>"Pendiente",:num_cuota=>num_cuota)
+			c_ant=p.cuota.where(:estado=>"Pendiente",:num_cuota=>num_cuota-1)
+			if(c_ant.count==0 && c.count!=0)
+				res+=1
+			end
+		end
+		return res
+	end
 end

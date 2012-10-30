@@ -1,6 +1,142 @@
 <h1>Repartir Cuotas</h1>
 <br/>
 
+<%= form_tag reparticion_path do %>
+<table>
+
+  <tr>
+    <td>
+      <b>Pedidos en cuota 1:</b>
+    </td>
+    <td>
+      <%=getCantPedidosPorNumCuota 1%>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <b>Pedidos en cuota 2:</b>
+    </td>
+    <td>
+      <%=getCantPedidosPorNumCuota 2%>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <b>Pedidos en cuota 3:</b>
+    </td>
+    <td>
+      <%=getCantPedidosPorNumCuota 3%>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <b>Pedidos en cuota 4:</b>
+    </td>
+    <td>
+      <%=getCantPedidosPorNumCuota 4%>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <b>Pedidos en cuota 5:</b>
+    </td>
+    <td>
+      <%=getCantPedidosPorNumCuota 5%>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <b>Pedidos en cuota 6:</b>
+    </td>
+    <td>
+      <%=getCantPedidosPorNumCuota 6%>
+    </td>
+  <tr>
+
+</table>
+
+</br>
+
+<table>
+  <tr>
+    <td>
+      <b>Gestor de cobro:</b>
+    </td>
+    <td>
+      <%= collection_select(:cobranza,@asdf, Usuario.where(:rol_id=>4), :id, :nombre) %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 1:</b>
+    </td>
+    <td>
+      <%= number_field_tag :nombre_cliente, params[:nombre_cliente], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 2:</b>
+    </td>
+    <td>
+      <%= number_field_tag :nombre_cliente, params[:nombre_cliente], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 3:</b>
+    </td>
+    <td>
+      <%= number_field_tag :nombre_cliente, params[:nombre_cliente], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 4:</b>
+    </td>
+    <td>
+      <%= number_field_tag :nombre_cliente, params[:nombre_cliente], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 5:</b>
+    </td>
+    <td>
+      <%= number_field_tag :nombre_cliente, params[:nombre_cliente], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 6:</b>
+    </td>
+    <td>
+      <%= number_field_tag :nombre_cliente, params[:nombre_cliente], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= submit_tag "Asignar" %>
+    </td>
+    <td>
+    </td>
+  </tr>
+</table>
+<%end%>
+
+<!--
 <table>
   <tr>
     <th>Número Pedido</th>
@@ -24,3 +160,4 @@
 <br />
 
 <%= link_to 'Repartir', reparticion_path %>
+-->

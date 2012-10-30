@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :producto_id %><br />
-    <%= f.collection_select :producto_id, Producto.all, :id, :nombre %>
+    <%= f.label :producto_en_inventario %><br />
+    <%= f.collection_select :inventario_id, Inventario.all, :id, :nombre %>
   </div>
   <div class="field">
     <%= f.label :asesor_id %><br />

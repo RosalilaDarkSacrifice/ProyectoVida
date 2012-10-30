@@ -400,6 +400,7 @@
 
 <table>
   <tr>
+    <th>Numero</th>
     <th>Estado</th>
     <th></th>
     <th></th>
@@ -408,6 +409,7 @@
 
 <% Cuotum.where(:pedido_id=>@pedido.id).each do |cuotum| %>
   <tr>
+    <td><%= cuotum.num_cuota %></td>
     <td><%= cuotum.estado %></td>
     <td><%= link_to 'Mostrar', cuotum %></td>
     <%if soyCobranza || soyAdministrador%>

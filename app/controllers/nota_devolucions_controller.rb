@@ -49,6 +49,10 @@ class NotaDevolucionsController < ApplicationController
 				transito.cantidad-=@nota_devolucion.cantidad
 				transito.save
 
+				inventario=transito.inventario
+				inventario.cantidad+=@nota_devolucion.cantidad
+				inventario.save
+
         format.html { redirect_to @nota_devolucion, notice: 'Nota devolucion was successfully created.' }
         format.json { render json: @nota_devolucion, status: :created, location: @nota_devolucion }
       else

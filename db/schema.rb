@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121026162301) do
+ActiveRecord::Schema.define(:version => 20121030162312) do
 
   create_table "asesors", :force => true do |t|
     t.string   "nombre"
@@ -74,8 +74,9 @@ ActiveRecord::Schema.define(:version => 20121026162301) do
     t.string   "proveedor"
     t.integer  "cantidad"
     t.float    "valor_unitario"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.float    "valor_unitario_dolares"
   end
 
   create_table "gerente_comercials", :force => true do |t|
@@ -209,11 +210,11 @@ ActiveRecord::Schema.define(:version => 20121026162301) do
   end
 
   create_table "transitos", :force => true do |t|
-    t.integer  "producto_id"
     t.integer  "asesor_id"
     t.integer  "cantidad"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "inventario_id"
   end
 
   create_table "usuarios", :force => true do |t|

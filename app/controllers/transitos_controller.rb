@@ -2,7 +2,7 @@ class TransitosController < ApplicationController
   # GET /transitos
   # GET /transitos.json
   def index
-    @transitos = Transito.includes(:producto).includes(:asesor).all
+    @transitos = Transito.includes(:inventario).includes(:asesor).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -86,9 +86,9 @@ class TransitosController < ApplicationController
     if asesor==[""]
       asesor=""
     end
-    producto=params[:producto]
-    if producto==[""]
-      producto=""
+    inventario=params[:producto]
+    if inventario==[""]
+      inventario=""
     end
 
     str=""
@@ -97,11 +97,11 @@ class TransitosController < ApplicationController
       str+="asesor_id = "+ Asesor.find_by_nombre(asesor).id.to_s + " "
     end
 
-    if producto!=""
+    if inventario!=""
       if str!=""
         str+= "and "
       end
-      str+="producto_id = "+ Producto.find_by_nombre(producto).id.to_s + " "
+      str+="inventario_id = "+ Inventario.find_by_nombre(inventario).id.to_s + " "
     end
 
     @transitos = Transito.where(str)
