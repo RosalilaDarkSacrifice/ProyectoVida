@@ -37,16 +37,16 @@ module ApplicationHelper
   end
 
   def usuariosAdministrador
-    return Usuario.where(:id=>1)
+    return Usuario.where(:rol_id=>1)
   end
   def usuariosReferenciacion
-    return Usuario.where(:id=>2)
+    return Usuario.where(:rol_id=>2)
   end
   def usuariosAsistente
-    return Usuario.where(:id=>3)
+    return Usuario.where(:rol_id=>3)
   end
   def usuariosCobranza
-    return Usuario.where(:id=>4)
+    return Usuario.where(:rol_id=>4)
   end
 
 
@@ -102,6 +102,18 @@ module ApplicationHelper
 		res=0
 		Pedido.all.each do |p|
 			c=p.cuota.where(:estado=>"Pendiente",:num_cuota=>num_cuota)
+			c_ant=p.cuota.where(:estado=>"Pendiente",:num_cuota=>num_cuota-1)
+			if(c_ant.count==0 && c.count!=0)
+				res+=1
+			end
+		end
+		return res
+	end
+
+	def getCantPedidosPorNumCuotaSinAsignar num_cuota
+		res=0
+		Pedido.all.each do |p|
+			c=p.cuota.where(:estado=>"Pendiente",:num_cuota=>num_cuota,:usuario_id=>nil)
 			c_ant=p.cuota.where(:estado=>"Pendiente",:num_cuota=>num_cuota-1)
 			if(c_ant.count==0 && c.count!=0)
 				res+=1

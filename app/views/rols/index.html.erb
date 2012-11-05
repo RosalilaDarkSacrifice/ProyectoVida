@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Nombre</th>
     <th></th>
     <th></th>
@@ -10,6 +11,7 @@
 
 <% @rols.each do |rol| %>
   <tr>
+    <td><%= rol.id %></td>
     <td><%= rol.nombre %></td>
     <td><%= link_to 'Show', rol %></td>
     <td><%= link_to 'Edit', edit_rol_path(rol) %></td>

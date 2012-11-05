@@ -3,6 +3,7 @@
 
 <table>
   <tr>
+    <th>Pedido id</th>
     <th>Número Pedido</th>
     <th>Número de Cuota</th>
     <th>Gestor de Cobro</th>
@@ -13,10 +14,10 @@
 <% if soyAsistente || soyAdministrador %>
 <% @cuota.each do |cuotum| %>
   <tr>
+    <td><%= cuotum.pedido_id %></td>
     <td><%= cuotum.pedido.numero_pedido %></td>
     <td><%= cuotum.num_cuota %></td>
     <td>
-    <!--cambio de Ahmed -->
     <% if cuotum.usuario %>
       <%= cuotum.usuario.nombre %>
     <%end%>
@@ -37,7 +38,6 @@
     <td><%= cuotum.pedido.numero_pedido %></td>
     <td><%= cuotum.num_cuota %></td>
     <td>
-    <!--cambio de Ahmed -->
     <% if cuotum.usuario %>
       <%= cuotum.usuario.nombre %>
     <%end%>

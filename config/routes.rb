@@ -55,7 +55,10 @@ ProyectoVida::Application.routes.draw do
   post "buscartransito" => "transitos#buscartransito", :as => "buscartransito"
   
   get "repartir" => "repartir#index", :as => "repartir"
-  get "reparticion" => "repartir#reparticion", :as => "reparticion"
+  post "reparticion" => "repartir#reparticion", :as => "reparticion"
+  get "coutas_repartidas" => "repartir#coutas_repartidas", :as => "coutas_repartidas"
+
+  post "buscar_cuotas" => "repartir#buscar_cuotas", :as => "buscar_cuotas"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
