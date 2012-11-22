@@ -16,14 +16,20 @@
 <tr>
   <td>
     <div class="field">
-    <%= f.label :fecha %><br />
+    <%= f.label :fecha_de_cuota %><br />
+    <%= @cuotum.pedido.fecha_inicio_pago.to_time.advance(:months => @cuotum.num_cuota).to_date %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label :fecha_de_pago %><br />
     <%= f.date_select :fecha %>
     </div>
   </td>
   <td>
     <div class="field">
     <%= f.label "Número de Cuota" %><br />
-    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
+    <%= @cuotum.num_cuota %>
   </div>
 </tr> 
 

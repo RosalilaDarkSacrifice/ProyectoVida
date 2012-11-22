@@ -113,4 +113,23 @@ class CuotaController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def buscar_cuotas_index
+
+		num_cuota=params[:num_cuota]
+		estado=params[:estado]
+
+		@cuota=[]
+		if estado==""
+			@cuota=Cuotum.find(:all, :conditions=> ["num_cuota = ?", num_cuota])
+		end
+		if estado!=""
+			@cuota=Cuotum.find(:all, :conditions=> ["num_cuota = ? AND estado = ?", num_cuota, estado])
+		end
+
+    render :index
+
+  end
+
 end

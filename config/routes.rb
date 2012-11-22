@@ -60,6 +60,8 @@ ProyectoVida::Application.routes.draw do
 
   post "buscar_cuotas" => "repartir#buscar_cuotas", :as => "buscar_cuotas"
 
+  post "buscar_cuotas_index" => "cuota#buscar_cuotas_index", :as => "buscar_cuotas_index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
