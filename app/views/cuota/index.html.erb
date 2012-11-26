@@ -241,7 +241,8 @@
 <% end %>
 
 <% if soyCobranza %>
-<% Cuotum.where(:usuario_id=>current_user.id).each do |cuotum| %>
+<% @cuota.each do |cuotum| %>
+<% if cuotum.usuario_id == current_user.id %>
   <tr>
     <td><%= cuotum.fecha %></td>
     <td><%= cuotum.num_cuota %></td>
@@ -251,6 +252,7 @@
     <td><%= link_to 'Mostrar', cuotum %></td>
     <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
   </tr>
+<% end %>
 <% end %>
 <% end %>
 </table>

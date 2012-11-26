@@ -6,6 +6,9 @@ class Transito < ActiveRecord::Base
 	has_many :nota_devolucion
 
 	def nombre
+		if inventario == nil
+			return "Error! No existe el producto en inventario."
+		end
 		return asesor.nombre + "-" + inventario.nombre# + " (" + cantidad.to_s + ")"
 	end
 end

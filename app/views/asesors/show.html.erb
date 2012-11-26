@@ -12,7 +12,7 @@
 
 <p>
   <b>Moderador:</b>
-  <%= @asesor.moderador_id %>
+  <%= @asesor.moderador.nombre %>
 </p>
 
 <p>
@@ -30,6 +30,20 @@
   <%= @asesor.comision_contado_asesor %>
 </p>
 
+<p>
+  <b>Total ventas credito:</b>
+  <%= getTotalVentasCredito @asesor.id %>
+</p>
+
+<p>
+  <b>Total ventas contado asesor:</b>
+  <%= getTotalVentasContadoAsesor @asesor.id %>
+</p>
+
+<p>
+  <b>Total ventas credito:</b>
+  <%= getTotalVentasContadoEmpresa @asesor.id %>
+</p>
 
 </br>
 </br>
@@ -50,7 +64,7 @@
     <th></th>
   </tr>
 
-<% Pedido.where(:asesor_id=>@asesor.id).each do |pedido| %>
+<% getPedidosAsesor(@asesor.id).each do |pedido| %>
   <tr>
     <td><%= link_to pedido.asesor.nombre,pedido.asesor %></td>
     <td><%= pedido.evento %></td>

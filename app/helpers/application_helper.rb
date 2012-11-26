@@ -121,4 +121,35 @@ module ApplicationHelper
 		end
 		return res
 	end
+
+	def getPedidosAsesor asesor_id
+		Pedido.where(:asesor_id=>asesor_id)
+	end
+
+	def getTotalVentasCredito asesor_id
+		resultado = 0
+		pedidos = Pedido.where(:asesor_id=>asesor_id, :tipo_pago=>"Credito")
+		pedidos.each do |p|
+			resultado+=p.valor_credito
+		end
+		return resultado
+	end
+
+	def getTotalVentasContadoAsesor asesor_id
+		resultado = 0
+		pedidos = Pedido.where(:asesor_id=>asesor_id, :tipo_pago=>"Contado asesor")
+		pedidos.each do |p|
+			resultado+=p.valor_credito
+		end
+		return resultado
+	end
+
+	def getTotalVentasContadoEmpresa asesor_id
+		resultado = 0
+		pedidos = Pedido.where(:asesor_id=>asesor_id, :tipo_pago=>"Contado empresa")
+		pedidos.each do |p|
+			resultado+=p.valor_credito
+		end
+		return resultado
+	end
 end

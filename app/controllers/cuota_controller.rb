@@ -114,18 +114,60 @@ class CuotaController < ApplicationController
     end
   end
 
+	def getPedidos anio_inicio, mes_inicio, dia_inicio, anio_final, mes_final, dia_final, numero_pedido, rvi
+
+    str=""
+    if numero_pedido!=""
+      str+="numero_pedido = "+ "\"" + numero_pedido + "\" "
+    end
+
+    if rvi!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="rvi = "+ "\"" + rvi + "\" "
+    end
+
+    if str!=""
+      str+= "and "
+    end
+
+    if mes_inicio.size==1
+      mes_inicio="0"+mes_inicio
+    end
+    
+    if dia_inicio.size==1
+      dia_inicio="0"+dia_inicio
+    end
+
+    if mes_final.size==1
+      mes_final="0"+mes_final
+    end
+
+    if dia_final.size==1
+      dia_final="0"+dia_final
+    end
+
+    str += " fecha_inicio_pago BETWEEN '" + anio_inicio + "-" + mes_inicio + "-" + dia_inicio + "' and '" + anio_final + "-" + mes_final + "-" + dia_final + "'"
+
+    return Pedido.where(str)
+	end
 
   def buscar_cuotas_index
 
 		num_cuota=params[:num_cuota]
 		estado=params[:estado]
 
-		@cuota=[]
-		if estado==""
-			@cuota=Cuotum.find(:all, :conditions=> ["num_cuota = ?", num_cuota])
-		end
-		if estado!=""
-			@cuota=Cuotum.find(:all, :conditions=> ["num_cuota = ? AND estado = ?", num_cuota, estado])
+		@pedidos = getPedidos(params[:anio_inicio], params[:mes_inicio], params[:dia_inicio], params[:anio_final], params[:mes_final], params[:dia_final], params[:numero_pedido], params[:rvi])
+
+		@cuota = []
+
+		@pedidos.each do |p|
+			p.cuota.each do |c|
+				if num_cuota == c.num_cuota.to_s && estado == c.estado
+					@cuota.push(c)
+				end
+			end
 		end
 
     render :index
