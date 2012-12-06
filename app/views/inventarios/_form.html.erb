@@ -10,11 +10,19 @@
       </ul>
     </div>
   <% end %>
-
+<% if @inventario.producto != nil %>
+  <div class="field">
+    <%= f.label :producto_id %>:<br />
+		<%= link_to @inventario.nombre, edit_producto_path(@inventario.producto) %>
+  </div>
+<% else %>
   <div class="field">
     <%= f.label :producto_id %><br />
     <%= f.collection_select :producto_id, Producto.all, :id, :nombre %>
   </div>
+<% end %>
+
+
 <%if @inventario.cantidad!=nil%>
   <div class="field">
     <%= f.label :cantidad %><br />
