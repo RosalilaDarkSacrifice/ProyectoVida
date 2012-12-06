@@ -114,7 +114,7 @@ class CuotaController < ApplicationController
     end
   end
 
-	def getPedidos anio_inicio, mes_inicio, dia_inicio, anio_final, mes_final, dia_final, numero_pedido, rvi
+	def getPedidos anio_inicio, mes_inicio, dia_inicio, anio_final, mes_final, dia_final, numero_pedido, rvi, asesor_id, nombre_cliente
 
     str=""
     if numero_pedido!=""
@@ -126,6 +126,20 @@ class CuotaController < ApplicationController
         str+= "and "
       end
       str+="rvi = "+ "\"" + rvi + "\" "
+    end
+
+    if nombre_cliente!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="nombre_cliente = "+ "\"" + nombre_cliente + "\" "
+    end
+
+    if asesor_id!=""
+      if str!=""
+        str+= "and "
+      end
+      str+="asesor_id = "+ asesor_id + " "
     end
 
     if str!=""
@@ -158,7 +172,7 @@ class CuotaController < ApplicationController
 		num_cuota=params[:num_cuota]
 		estado=params[:estado]
 
-		@pedidos = getPedidos(params[:anio_inicio], params[:mes_inicio], params[:dia_inicio], params[:anio_final], params[:mes_final], params[:dia_final], params[:numero_pedido], params[:rvi])
+		@pedidos = getPedidos(params[:anio_inicio], params[:mes_inicio], params[:dia_inicio], params[:anio_final], params[:mes_final], params[:dia_final], params[:numero_pedido], params[:rvi], params[:asesor_id][0], params[:nombre_cliente])
 
 		@cuota = []
 

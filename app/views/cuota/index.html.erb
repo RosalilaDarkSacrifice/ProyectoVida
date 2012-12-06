@@ -184,6 +184,22 @@
 			</select>
     </td>
   </tr>
+  <tr>
+    <td>
+      <b>Asesor:</b>
+    </td>
+    <td>
+      <%= collection_select(:asesor_id,@asdf, Asesor.all, :id, :nombre,{ :include_blank => true }) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Nombre cliente:</b>
+    </td>
+    <td>
+      <%= text_field_tag :nombre_cliente, params[:nombre_cliente] %>
+    </td>
+  </tr>
 
   <tr>
     <td>
@@ -256,7 +272,3 @@
 <% end %>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'Nueva Cuota', new_cuotum_path %>
